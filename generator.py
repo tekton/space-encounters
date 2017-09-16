@@ -57,19 +57,83 @@ WORMHOLESIZEGEN = (
 	)
 WormholeSize = random.choice(WORMHOLESIZEGEN)
 
+WORMHOLESTABGEN = (
+	"40%",
+	"30%",
+	"15%",
+	"05%"
+	)
+WormHoleStab = random.choice(WORMHOLESTABGEN)
+
+DAYLENGEN = (
+	"8 Hours",
+	"12 Hours",
+	"18 Hours",
+	"24 Hours",
+	"30 Hours",
+	"36 Hours",
+	"42 Hours",
+	"48 Hours"
+	)
+DayLen = random.choice(DAYLENGEN)
+
+YEARLENGEN = (
+	"30 Days",
+	"60 Days",
+	"90 Days",
+	"120 Days",
+	"180 Days",
+	"270 Days",
+	"360 Days",
+	"520 Days",
+	"760 Days"
+	)
+YearLen = random.choice(YEARLENGEN)
+
+CONGEN = (
+	"Perfect",
+	"Average",
+	"Disrepair",
+	"Derelict"
+	)
+Con = random.choice(CONGEN)
+
+DISPOSITIONGEN = (
+	"Helpful",
+	"Friendly",
+	"Neutral",
+	"Unfriendly",
+	"Hostile"
+	)
+Disposition = random.choice(DISPOSITIONGEN)
+
+HOSTILEGEN = (
+	"Orcs",
+	"Goblins",
+	"Pirates",
+	"Demons",
+	"Hive",
+	"Cultists",
+	"Soldiers",
+	"Kobolds",
+	"Gnolls",
+	"Pact World Wardens",
+	)
+Hostiles = random.choice(HOSTILEGEN)
+
 ENCOUNTERTYPES = {
-	"Dead": {"Type": "Dead World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "DayLen": "DeadworldDayLen", "Year": "DeadworldYear", "Resources": "DeadWorldResources"}, 
-	"Volcanic": {"Type": "Volcanic World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "DayLen": "VolcanicworldDayLen", "Year": "VolcanicWorldYear", "Resources": "VolcanicResources"}, 
-	"Oceanic": {"Type": "Oceanic World", "Population": MedWorldPop, "Atmosphere": WorldAtmo, "DayLen": "OceanicDayLen", "Year": "OceanicworldYear"},
-	"Jungle": {"Type": "Jungle World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "DayLen": "JungleworldDayLen", "Year": "JungleworldYear", "Resources": "JungleResources"},
-	"Asteroid Field": {"Type": "Asteroid Field", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Resources": "AsteroidResources"},
-	"Wormhole": {"Type": "WormHole", "Size": WormholeSize, "Stability": "WormHoleStab"}, 
-	"Space Station": {"Type": "Space Station", "Population": LowWorldPop, "Atmosphere": ShipAtmo, "DayLen": "StationDayLen", "Year": "StationYear"},
-	"Ship": {"Type": "Ship", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Condition": "ShipCondition", "Disposition": "ShipDisposition"},
-	"Gas Giant": {"Type": "Gas Giant", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "DayLen": "GasDayLen", "Year": "GasYear", "Resources": "GasResources"},
-	"Temperate World": {"Type": "Temperate World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "DayLen": "TemperateDayLen", "Year": "TemperateYear", "Resources": "TemperateResources"},
-	"Ice Planet": {"Type": "Ice World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "DayLen": "IceworldDayLen", "Year": "IceworldYear"},
-	"Space Hulk": {"Type": "Space Hulk", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Hostiles": "SpaceHulkHostiles"}
+	"Dead": {"Type": "Dead World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles}, 
+	"Volcanic": {"Type": "Volcanic World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles}, 
+	"Oceanic": {"Type": "Oceanic World", "Population": MedWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles},
+	"Jungle": {"Type": "Jungle World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles},
+	"Asteroid Field": {"Type": "Asteroid Field", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Hostiles": Hostiles},
+	"Wormhole": {"Type": "WormHole", "Size": WormholeSize, "Stability": WormHoleStab, "Hostiles": Hostiles}, 
+	"Space Station": {"Type": "Space Station", "Population": LowWorldPop, "Atmosphere": ShipAtmo, "Station Condition": Con, "Disposition": Disposition, "Hostiles": Hostiles},
+	"Ship": {"Type": "Ship", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Condition": Con, "Disposition": Disposition, "Hostiles": Hostiles},
+	"Gas Giant": {"Type": "Gas Giant", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles},
+	"Temperate World": {"Type": "Temperate World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles},
+	"Ice Planet": {"Type": "Ice World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen, "Hostiles": Hostiles},
+	"Space Hulk": {"Type": "Space Hulk", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Hostiles": "SpaceHulkHostiles", "Hostiles": Hostiles}
 }
 
 encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
