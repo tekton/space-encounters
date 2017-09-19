@@ -1,28 +1,17 @@
 import random
+from random import randint
 
-LOWWORLDPOPGEN = (
-	"0", 
-	"1-1000", 
-	"1001-5000"
-	)
-LowWorldPop = random.choice(LOWWORLDPOPGEN)
+LowWorldPopGen = randint(0, 5000)
 
-MEDWORLDPOPGEN = (  
-	"5001-25000",
-	"25001-100,000",
-	"100,001-250,000",
-	"250,001-500,000"
-	)
-MedWorldPop = random.choice(MEDWORLDPOPGEN)
+LowWorldPop = "{} life signs".format(LowWorldPopGen)
 
-HIGHWORLDPOPGEN = (  
-	"500,001-1,000,000",
-	"1MM-20MM",
-	"21MM-100MM",
-	"100MM-1B",
-	"1B-8B"
-	)
-HighWorldPop = random.choice(HIGHWORLDPOPGEN)
+MedWorldPopGen = randint(5001, 500000)
+
+MedWorldPop = "{} life signs".format(MedWorldPopGen)
+
+HighWorldPopGen = randint(500000, 8000000000)
+
+HighWorldPop = "{} life signs".format(HighWorldPopGen)
 
 ATMOGEN = (
 	"Thin",
@@ -57,38 +46,17 @@ WORMHOLESIZEGEN = (
 	)
 WormholeSize = random.choice(WORMHOLESIZEGEN)
 
-WORMHOLESTABGEN = (
-	"40%",
-	"30%",
-	"15%",
-	"05%"
-	)
-WormHoleStab = random.choice(WORMHOLESTABGEN)
+WormHoleStabGen = randint(01, 100)
 
-DAYLENGEN = (
-	"8 Hours",
-	"12 Hours",
-	"18 Hours",
-	"24 Hours",
-	"30 Hours",
-	"36 Hours",
-	"42 Hours",
-	"48 Hours"
-	)
-DayLen = random.choice(DAYLENGEN)
+WormHoleStab = "{} Hours".format(WormHoleStabGen)
 
-YEARLENGEN = (
-	"30 Days",
-	"60 Days",
-	"90 Days",
-	"120 Days",
-	"180 Days",
-	"270 Days",
-	"360 Days",
-	"520 Days",
-	"760 Days"
-	)
-YearLen = random.choice(YEARLENGEN)
+DayHours = randint(8, 96) 
+
+DayLen = "{} Hours".format(DayHours)
+
+YearDays = randint(90, 1200)
+
+YearLen = "{} Hours".format(YearDays)
 
 CONGEN = (
 	"Perfect",
@@ -117,7 +85,6 @@ HOSTILEGEN = (
 	"Soldiers",
 	"Kobolds",
 	"Gnolls",
-	"Pact World Wardens",
 	"Aliens",
 	"none"
 	)
@@ -140,4 +107,7 @@ ENCOUNTERTYPES = {
 
 encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
 
-print encounter
+def encountergen():
+	print encounter
+
+encountergen()
