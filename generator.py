@@ -118,6 +118,8 @@ HOSTILEGEN = (
 	"Kobolds",
 	"Gnolls",
 	"Pact World Wardens",
+	"Aliens",
+	"none"
 	)
 Hostiles = random.choice(HOSTILEGEN)
 
