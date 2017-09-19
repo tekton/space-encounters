@@ -39,7 +39,7 @@ def encountergen():
 	ship_atmo = random.choice(ship_atmo_gen)
 	worm_hole_size = random.choice(wormhole_size_gen)
 	worm_hole_stab_gen = random.randint(1, 100)
-	worm_hole_stab = "{} Hours".format(worm_hole_stab_gen)
+	worm_hole_stab = "{} Percent".format(worm_hole_stab_gen)
 	day_hours = random.randint(8, 96)
 	day_len = "{} Hours".format(day_hours)
 	year_days = random.randint(90, 1200)
