@@ -11,4 +11,7 @@ STARGEN = (
 	)
 Stars = random.choice(STARGEN)
 
-print Stars
+def stargen():
+	print Stars
+
+stargen()
