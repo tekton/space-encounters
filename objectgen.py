@@ -43,7 +43,7 @@ def encountergen():
 	day_hours = random.randint(8, 96)
 	day_len = "{} Hours".format(day_hours)
 	year_days = random.randint(90, 1200)
-	year_len = "{} Hours".format(year_days)
+	year_len = "{} Days".format(year_days)
 
 	disposition_gen = (
 	"Helpful",
