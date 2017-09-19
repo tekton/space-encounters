@@ -1,0 +1,4 @@
+SPACECOMBATGEN = (
+	"placeholder",
+	"placeholder2"
+	)
