@@ -1,42 +1,25 @@
 import random
 import stargen
 
+def encountergen():
 
-LowWorldPopGen = random.randint(0, 5000)
-
-LowWorldPop = "{} life signs".format(LowWorldPopGen)
-
-MedWorldPopGen = random.randint(5001, 500000)
-
-MedWorldPop = "{} life signs".format(MedWorldPopGen)
-
-HighWorldPopGen = random.randint(500000, 8000000000)
-
-HighWorldPop = "{} life signs".format(HighWorldPopGen)
-
-ATMOGEN = (
+	ATMOGEN = (
 	"Thin",
 	"none",
 	"Special"
 	)
-WorldAtmo = random.choice(ATMOGEN)
-
-LIVINGWORLDATMOGEN = (
+	LIVINGWORLDATMOGEN = (
 	"Thin",
 	"Normal",
 	"Special"
 	)
-LivingWorldAtmo = random.choice(LIVINGWORLDATMOGEN)
-
-SHIPATMOGEN = (
+	SHIPATMOGEN = (
 	"Thin",
 	"Normal",
 	"Special",
 	"None"
 	)
-ShipAtmo = random.choice(SHIPATMOGEN)
-
-WORMHOLESIZEGEN = (
+	WORMHOLESIZEGEN = (
 	"Tiny",
 	"Small",
 	"Medium",
@@ -45,38 +28,39 @@ WORMHOLESIZEGEN = (
 	"Gargantuan",
 	"Collosal"
 	)
-WormholeSize = random.choice(WORMHOLESIZEGEN)
+	LowWorldPopGen = random.randint(0, 5000)
+	LowWorldPop = "{} life signs".format(LowWorldPopGen)
+	MedWorldPopGen = random.randint(5001, 500000)
+	MedWorldPop = "{} life signs".format(MedWorldPopGen)
+	HighWorldPopGen = random.randint(500000, 8000000000)
+	HighWorldPop = "{} life signs".format(HighWorldPopGen)
+	WorldAtmo = random.choice(ATMOGEN)
+	LivingWorldAtmo = random.choice(LIVINGWORLDATMOGEN)
+	ShipAtmo = random.choice(SHIPATMOGEN)
+	WormholeSize = random.choice(WORMHOLESIZEGEN)
+	WormHoleStabGen = random.randint(01, 100)
+	WormHoleStab = "{} Hours".format(WormHoleStabGen)
+	DayHours = random.randint(8, 96)
+	DayLen = "{} Hours".format(DayHours)
+	YearDays = random.randint(90, 1200)
+	YearLen = "{} Hours".format(YearDays)
 
-WormHoleStabGen = random.randint(01, 100)
-
-WormHoleStab = "{} Hours".format(WormHoleStabGen)
-
-DayHours = random.randint(8, 96) 
-
-DayLen = "{} Hours".format(DayHours)
-
-YearDays = random.randint(90, 1200)
-
-YearLen = "{} Hours".format(YearDays)
-
-CONGEN = (
-	"Perfect",
-	"Average",
-	"Disrepair",
-	"Derelict"
-	)
-Con = random.choice(CONGEN)
-
-DISPOSITIONGEN = (
+	DISPOSITIONGEN = (
 	"Helpful",
 	"Friendly",
 	"Neutral",
 	"Unfriendly",
 	"Hostile"
 	)
-Disposition = random.choice(DISPOSITIONGEN)
-
-ENCOUNTERTYPES = {
+	Disposition = random.choice(DISPOSITIONGEN)
+	CONGEN = (
+	"Perfect",
+	"Average",
+	"Disrepair",
+	"Derelict"
+	)
+	Con = random.choice(CONGEN)
+	ENCOUNTERTYPES = {
 	"Dead": {"Type": "Dead World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen}, 
 	"Volcanic": {"Type": "Volcanic World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen}, 
 	"Oceanic": {"Type": "Oceanic World", "Population": MedWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen},
@@ -89,9 +73,6 @@ ENCOUNTERTYPES = {
 	"Temperate World": {"Type": "Temperate World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "Day Length": DayLen, "Year": YearLen},
 	"Ice Planet": {"Type": "Ice World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen},
 	"Space Hulk": {"Type": "Space Hulk", "Population": LowWorldPop, "Atmosphere": WorldAtmo}
-}
-
-encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
-
-def encountergen():
+	}
+	encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
 	print encounter
