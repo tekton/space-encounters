@@ -3,23 +3,23 @@ import stargen
 
 def encountergen():
 
-	ATMOGEN = (
+	atmogen = (
 	"Thin",
 	"none",
 	"Special"
 	)
-	LIVINGWORLDATMOGEN = (
+	living_world_atmogen = (
 	"Thin",
 	"Normal",
 	"Special"
 	)
-	SHIPATMOGEN = (
+	ship_atmo_gen = (
 	"Thin",
 	"Normal",
 	"Special",
 	"None"
 	)
-	WORMHOLESIZEGEN = (
+	wormhole_size_gen = (
 	"Tiny",
 	"Small",
 	"Medium",
@@ -28,51 +28,51 @@ def encountergen():
 	"Gargantuan",
 	"Collosal"
 	)
-	LowWorldPopGen = random.randint(0, 5000)
-	LowWorldPop = "{} life signs".format(LowWorldPopGen)
-	MedWorldPopGen = random.randint(5001, 500000)
-	MedWorldPop = "{} life signs".format(MedWorldPopGen)
-	HighWorldPopGen = random.randint(500000, 8000000000)
-	HighWorldPop = "{} life signs".format(HighWorldPopGen)
-	WorldAtmo = random.choice(ATMOGEN)
-	LivingWorldAtmo = random.choice(LIVINGWORLDATMOGEN)
-	ShipAtmo = random.choice(SHIPATMOGEN)
-	WormholeSize = random.choice(WORMHOLESIZEGEN)
-	WormHoleStabGen = random.randint(01, 100)
-	WormHoleStab = "{} Hours".format(WormHoleStabGen)
-	DayHours = random.randint(8, 96)
-	DayLen = "{} Hours".format(DayHours)
-	YearDays = random.randint(90, 1200)
-	YearLen = "{} Hours".format(YearDays)
+	low_world_pop_gen = random.randint(0, 5000)
+	low_world_pop = "{} life signs".format(low_world_pop_gen)
+	med_world_pop_gen = random.randint(5001, 500000)
+	med_world_pop = "{} life signs".format(med_world_pop_gen)
+	high_world_pop_gen = random.randint(500000, 8000000000)
+	high_world_pop = "{} life signs".format(high_world_pop_gen)
+	world_atmo = random.choice(ATMOGEN)
+	living_world_atmo = random.choice(living_world_atmogen)
+	ship_atmo = random.choice(ship_atmo_gen)
+	worm_hole_size = random.choice(wormhole_size_gen)
+	worm_hole_stab_gen = random.randint(01, 100)
+	worm_hole_stab = "{} Hours".format(worm_hole_stab_gen)
+	day_hours = random.randint(8, 96)
+	day_len = "{} Hours".format(day_hours)
+	year_days = random.randint(90, 1200)
+	year_len = "{} Hours".format(year_days)
 
-	DISPOSITIONGEN = (
+	disposition_gen = (
 	"Helpful",
 	"Friendly",
 	"Neutral",
 	"Unfriendly",
 	"Hostile"
 	)
-	Disposition = random.choice(DISPOSITIONGEN)
-	CONGEN = (
+	disposition = random.choice(disposition_gen)
+	con_gen = (
 	"Perfect",
 	"Average",
 	"Disrepair",
 	"Derelict"
 	)
-	Con = random.choice(CONGEN)
-	ENCOUNTERTYPES = {
-	"Dead": {"Type": "Dead World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen}, 
-	"Volcanic": {"Type": "Volcanic World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen}, 
-	"Oceanic": {"Type": "Oceanic World", "Population": MedWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen},
-	"Jungle": {"Type": "Jungle World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "Day Length": DayLen, "Year": YearLen},
-	"Asteroid Field": {"Type": "Asteroid Field", "Population": LowWorldPop, "Atmosphere": WorldAtmo},
+	con = random.choice(con_gen)
+	encounter_types = {
+	"Dead": {"Type": "Dead World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len}, 
+	"Volcanic": {"Type": "Volcanic World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len}, 
+	"Oceanic": {"Type": "Oceanic World", "Population": med_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
+	"Jungle": {"Type": "Jungle World", "Population": med_world_pop, "Atmosphere": Livingworld_atmo, "Day Length": day_len, "Year": year_len},
+	"Asteroid Field": {"Type": "Asteroid Field", "Population": low_world_pop, "Atmosphere": world_atmo},
 	"Wormhole": {"Type": "WormHole", "Size": WormholeSize, "Stability": WormHoleStab}, 
-	"Space Station": {"Type": "Space Station", "Population": LowWorldPop, "Atmosphere": ShipAtmo, "Station Condition": Con, "Disposition": Disposition},
-	"Ship": {"Type": "Ship", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Condition": Con, "Disposition": Disposition},
-	"Gas Giant": {"Type": "Gas Giant", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen},
-	"Temperate World": {"Type": "Temperate World", "Population": MedWorldPop, "Atmosphere": LivingWorldAtmo, "Day Length": DayLen, "Year": YearLen},
-	"Ice Planet": {"Type": "Ice World", "Population": LowWorldPop, "Atmosphere": WorldAtmo, "Day Length": DayLen, "Year": YearLen},
-	"Space Hulk": {"Type": "Space Hulk", "Population": LowWorldPop, "Atmosphere": WorldAtmo}
+	"Space Station": {"Type": "Space Station", "Population": low_world_pop, "Atmosphere": ShipAtmo, "Station Condition": Con, "Disposition": Disposition},
+	"Ship": {"Type": "Ship", "Population": low_world_pop, "Atmosphere": world_atmo, "Condition": Con, "Disposition": Disposition},
+	"Gas Giant": {"Type": "Gas Giant", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
+	"Temperate World": {"Type": "Temperate World", "Population": med_world_pop, "Atmosphere": Livingworld_atmo, "Day Length": day_len, "Year": year_len},
+	"Ice Planet": {"Type": "Ice World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
+	"Space Hulk": {"Type": "Space Hulk", "Population": low_world_pop, "Atmosphere": world_atmo}
 	}
-	encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
+	encounter = encounter_types[random.choice(encounter_types.keys())]
 	print encounter
