@@ -1,5 +1,5 @@
 import objectgen
 import stargen
 
-stargen.stars()
-objectgen.encounters()
+stargen.stargen()
+objectgen.encounter()

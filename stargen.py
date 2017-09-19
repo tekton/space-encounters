@@ -13,5 +13,3 @@ Stars = random.choice(STARGEN)
 
 def stargen():
 	print Stars
-
-stargen()

@@ -95,5 +95,3 @@ encounter = ENCOUNTERTYPES[random.choice(ENCOUNTERTYPES.keys())]
 
 def encountergen():
 	print encounter
-
-encountergen()
