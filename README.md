@@ -15,3 +15,7 @@ My solution was to make this generator. It allows me to whip up a system with in
 This is still in development, but as I go I hope to turn it into a very useful GMing tool. 
 
 Please comment with ideas!
+
+REQUIREMENTS
+
+Requires python 2.7
