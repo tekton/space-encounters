@@ -3,117 +3,141 @@ System object planning:
 Planets:
 	Types:
 		Dead
-			Atmosphere
+			Atmosphere - Choose 1
 				None
 				Thin
 				Normal
 				Toxic
 				Special
-			Population
-				none
+			Population - Choose 0-1
 				low
-			Civilization
+			Civilization - Set
 				none
-			Day Length
-			Year Length
-			Planet Diameter
-			Threats
+			Day Length - Random set number
+			Year Length - Random set Number
+			Planet Diameter - Random set number
+			Threats - Chose 0-2
 				Dead World Threats
 				Pirate Threats
-			Resources
+			Resources Choose 0-2
 				Minerals
 				Water
+		Ice World
+			Atmosphere Choose 1
+				Thin
+				Normal
+			Population Choose 0-1
+				Low 
+			Civilization Choose 0-1
+				None
+				Primitive
+				Industrial
+				Advanced
+			Day Length - Random set number
+			Year length - Random set number
+			Planet Diameter - Random set number
+			Threats - Choose 0-3
+				Ice World Threats
+				Alien Threats
+				Pirate Threats
+			Resources - Choose 0-2
+				None
+				Water
+				Minerals
 		Volcanic
-			Atmosphere
+			Atmosphere - Choose 1
 				Thin
 				Normal
 				Toxic
-			Population
+			Population - Choose 1
 				None
 				Low population
 				Medium Population
-			Civilization
+			Civilization - Choose 0-3
 				Primitive
 				Industrial
 				Advanced
-			Day Length
-			Year Length
-			Planet Diameter
-			Threats
+			Day Length - Random set number
+			Year Length - Random set number
+			Planet Diameter - Random set number
+			Threats Choose 0-2
 				Volcanic World Threats
 				Piraet Threats
-			Resources
+			Resources - Choose 0-1
 				Minerals
 		Oceanic
-			Atmosphere
+			Atmosphere - Choose 1 
 				Thin
 				Normal
-			Population
-				None
+			Population Choose 0-1
 				Low Population
 				Medium Population
 				High Population
-			Civilization
-				None
+			Civilization - Choose 0-3
 				Primitive
 				Industrial
 				Advanced
-			Day Length
-			Year Length
-			Planet Diameter
-			Threats
+			Day Length - Random set number
+			Year Length - Random set number
+			Planet Diameter - Random set number
+			Threats Choose 0-1
 				Oceanic World Threats
-			Resources
+			Resources - Choose 0-2
 				Water
 				Minerals
 		Gas Giant
-			Atmosphere
+			Atmosphere - Choose 1
 				None
 				Thin
-			Population
-				None
+			Population - Choose 0-1
 				Low population
-			Civilization
-				None
+			Civilization - Choose 0-1
 				Advanced
-			Day Length
-			Year Length
-			Planet Diameter
-			Threats
+			Day Length - Random set number
+			Year Length - Random set number
+			Planet Diameter - Random set number
+			Threats - Choose 0-2
 				Gas Giant Threats
 				Pirate Threats
-			Resources
+			Resources - Choose 0-1
 				Gas
 		Living World
-			Atmosphere
+			Atmosphere - Choose 1
 				Thin
 				Normal
-			Population
-				None
+			Population - Choose 0-3
 				Low Population
 				Medium Population
 				High Population
-			Civilization
-				None
+			Civilization - Choose 0-3
 				Primitive
 				Industrial
 				Advanced
-			Day Length
-			Year Length
-			Planet Diameter
-			Water Coverage
-			Threats
+			Day Length - Random set number
+			Year Length - Random set number
+			Planet Diameter - Random set number
+			Water Coverage - Random set number
+			Threats - Choose 0-3
 				Living World Threats
 				Pirate Threats
 				Alien Threats
-			Resources
+			Resources - Choose 0-3
 				Minerals
 				Water
 				Gas
 			Continents
-				Number
-				Size
-				Biomes
+				Number - Random set number
+				Size - Random set number
+				Biomes - Choose 1-4 per continent
+					Jungle
+					Tundra
+					Temperate
+					Swamp
+					Desert
+					Mountains
+					Forest
+					Barren
+
 
 Asteroid Fields:
 	Minerals
