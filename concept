@@ -1,0 +1,48 @@
+Encounter Generation ideas:
+
+The goal for this is to generate an encounter for a party that will be fully fleshed out, and give the GM something to work with that will challenge the players without going over the top. 
+
+First, we would define the type of enemy that we are facing. 
+	* It may be a group of monsters, or a group of sentient humanoid enemies, in some cases both. 
+	* We'll define keywords on the enemies, and only enemies with like keywords will be included in groups, so they make sense. 
+	* Each Enemy will have a defined role, such as Leader, Soldier, Specialist, etc. 
+	* Each enemy will have a value assigned to it. 
+	* The total value of the enemies will be equal to or less than the encounter level, with adjustements for requested difficulty. 
+	* Loot will be based on a value of the Encounter level * difficulty modifier. 
+
+For Example, the workflow of generating an orc encounter may look like this:
+
+GM decides to give the party an average encounter. He inputs that there are 4 players, of Average Party level 2. The party score is 4*2=8.
+
+The program should look at the available Orcs, and build based on the following. 
+
+0-1 Leader choice. 
+0-8 Warrior Choices.
+0-4 Specialist Choices.
+0-2 Spellcasters.
+
+Lets say it selects an Orc Pirate Captain as the leader. Hes tough, and accounts for 4 build points. 
+Warriors are rank and file, worth 1 build point. 
+Specialists pose a bit more of a threat, so they are 2 build points. 
+Spellcasters can often be almost as deadly as leader, and are worth 3 points. 
+
+The system would then randomly build the encounter, based on those parameters, to decide the output. It should attempt to get as close to 8 build points as possible, without going over. Each individual Monster would have a BP associated with it, and may use partial numbers, such as 1.2, 2.7, etc. I used nice roung number for examples. 
+
+Possible examples: 
+
+Orc Pirate Lord (4BP)
+2 Orc Pirates (warriors) (2BP)
+One Orc with a Flamethrower (Specialist) (2BP)
+
+Totaling 8. 
+
+Or, possibly the group is Escorting a spellcaster. 
+
+Orc Shaman (Spellcaster) (3BP)
+5 Orc Pirates (Warriors, 1 BP each) (5BP)
+
+Or maybe you just ran into a drunken horde of Orcs. 
+
+8 orc Warriors, 1 BP each, (8BP)
+
+I eventually want to link random name generation , random stat generation within a range, and randomized gear onto these enemies, so that each group you fight seems unique, and any sentient enemy they banter with or Capture has a name and a story. This is tedious work for a GM who knows his minions will likely be slaughtered, but not so with the generator. 

@@ -1,5 +1,4 @@
 import random
-import stargen
 
 def encountergen():
 
@@ -44,6 +43,8 @@ def encountergen():
 	day_len = "{} Hours".format(day_hours)
 	year_days = random.randint(90, 1200)
 	year_len = "{} Days".format(year_days)
+	planet_size = random.randint(100000000, 100000000000)
+	planet_diameter = "{} Kilometers".format(planet_size)
 
 	disposition_gen = (
 	"Helpful",
@@ -61,17 +62,17 @@ def encountergen():
 	)
 	con = random.choice(con_gen)
 	encounter_types = {
-	"Dead": {"Type": "Dead World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len}, 
-	"Volcanic": {"Type": "Volcanic World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len}, 
-	"Oceanic": {"Type": "Oceanic World", "Population": med_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
-	"Jungle": {"Type": "Jungle World", "Population": med_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len},
+	"Dead": {"Type": "Dead World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter}, 
+	"Volcanic": {"Type": "Volcanic World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter}, 
+	"Oceanic": {"Type": "Oceanic World", "Population": med_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
+	"Jungle": {"Type": "Jungle World", "Population": med_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
 	"Asteroid Field": {"Type": "Asteroid Field", "Population": low_world_pop, "Atmosphere": world_atmo},
 	"Wormhole": {"Type": "WormHole", "Size": worm_hole_size, "Stability": worm_hole_stab}, 
 	"Space Station": {"Type": "Space Station", "Population": low_world_pop, "Atmosphere": ship_atmo, "Station Condition": con, "Disposition": disposition},
 	"Ship": {"Type": "Ship", "Population": low_world_pop, "Atmosphere": world_atmo, "Condition": con, "Disposition": disposition},
-	"Gas Giant": {"Type": "Gas Giant", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
-	"Temperate World": {"Type": "Temperate World", "Population": med_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len},
-	"Ice Planet": {"Type": "Ice World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len},
+	"Gas Giant": {"Type": "Gas Giant", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
+	"Temperate World": {"Type": "Temperate World", "Population": high_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
+	"Ice Planet": {"Type": "Ice World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
 	"Space Hulk": {"Type": "Space Hulk", "Population": low_world_pop, "Atmosphere": world_atmo}
 	}
 	encounter = encounter_types[random.choice(encounter_types.keys())]
