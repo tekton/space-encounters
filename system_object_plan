@@ -1,0 +1,164 @@
+System object planning:
+
+Planets:
+	Types:
+		Dead
+			Atmosphere
+				None
+				Thin
+				Normal
+				Toxic
+				Special
+			Population
+				none
+				low
+			Civilization
+				none
+			Day Length
+			Year Length
+			Planet Diameter
+			Threats
+				Dead World Threats
+				Pirate Threats
+			Resources
+				Minerals
+				Water
+		Volcanic
+			Atmosphere
+				Thin
+				Normal
+				Toxic
+			Population
+				None
+				Low population
+				Medium Population
+			Civilization
+				Primitive
+				Industrial
+				Advanced
+			Day Length
+			Year Length
+			Planet Diameter
+			Threats
+				Volcanic World Threats
+				Piraet Threats
+			Resources
+				Minerals
+		Oceanic
+			Atmosphere
+				Thin
+				Normal
+			Population
+				None
+				Low Population
+				Medium Population
+				High Population
+			Civilization
+				None
+				Primitive
+				Industrial
+				Advanced
+			Day Length
+			Year Length
+			Planet Diameter
+			Threats
+				Oceanic World Threats
+			Resources
+				Water
+				Minerals
+		Gas Giant
+			Atmosphere
+				None
+				Thin
+			Population
+				None
+				Low population
+			Civilization
+				None
+				Advanced
+			Day Length
+			Year Length
+			Planet Diameter
+			Threats
+				Gas Giant Threats
+				Pirate Threats
+			Resources
+				Gas
+		Living World
+			Atmosphere
+				Thin
+				Normal
+			Population
+				None
+				Low Population
+				Medium Population
+				High Population
+			Civilization
+				None
+				Primitive
+				Industrial
+				Advanced
+			Day Length
+			Year Length
+			Planet Diameter
+			Water Coverage
+			Threats
+				Living World Threats
+				Pirate Threats
+				Alien Threats
+			Resources
+				Minerals
+				Water
+				Gas
+			Continents
+				Number
+				Size
+				Biomes
+
+Asteroid Fields:
+	Minerals
+	Threats
+	Hazards
+
+Wormholes:
+	Size
+		Tiny
+		Small
+		Medium
+		Large
+		Huge
+		Gargantuan
+		Colossal
+	Stability
+		Random 1-99
+	Flucuation
+		Random 1-20
+	Threats
+		Wormhole Threats table
+
+Ships:
+	Origins
+	Size
+	Power status
+	Condition
+	Crew
+		Disposition
+	Threats
+
+Space Stations:
+	Origins
+	Size
+	Power status
+	Condition
+	Crew
+		Disposition
+	Threats
+
+Space Hulks
+	Power Status
+	Condition
+	Natural or constructed?
+	Atmosphere
+	Life Signs
+	Threats
+	Stability
