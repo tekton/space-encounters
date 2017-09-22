@@ -1,19 +1,15 @@
 import random
+from collections import OrderedDict
+import pprint
 
-def statgen(level):
-	strength = random.randint(14,18)
-	dex = random.randint(12,16)
-	con = random.randint(12,18)
-	intelligence = random.randint(8,12)
-	wisdom = random.randint(10,14)
-	charisma = random.randint(8,12)
-	stats = {"STR": strength, "DEX": dex, "CON": con, "INT": intelligence, "WIS": wisdom, "CHA": charisma}
+def statgen():
+	rtn_stats = OrderedDict()
+	rtn_stats["STR"] = random.randint(14,18)
+	rtn_stats["DEX"] = random.randint(12,16)
+	rtn_stats["CON"] = random.randint(12,18)
+	rtn_stats["INT"] = random.randint(8,12)
+	rtn_stats["WIS"] = random.randint(10,14)
+	rtn_stats["CHA"] = random.randint(8,12)
+	return rtn_stats
 
-	con_hit_points_bonus = ((con-10)/2) * level
-	base_hit_points = level * random.randint(5,8)
-	hit_points = int(con_hit_points_bonus + base_hit_points)
-
-	print stats
-	print "{} Hit points".format(int(hit_points))
-
-statgen(3)
+statgen()
