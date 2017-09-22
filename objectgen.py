@@ -1,79 +1,90 @@
 import random
 
+LOW_WORLD_POP_GEN = random.randint(0, 5000)
+LOW_WORLD_POP = "{} life signs".format(LOW_WORLD_POP_GEN)
+MED_WORLD_POP_GEN = random.randint(5001, 500000)
+MED_WORLD_POP = "{} life signs".format(MED_WORLD_POP_GEN)
+HIGH_WORLD_POP_GEN = random.randint(500000, 8000000000)
+HIGH_WORLD_POP = "{} life signs".format(HIGH_WORLD_POP_GEN)
+WORLD_ATMO = random.choice(ATMOGEN)
+LIVING_WORLD_ATMO = random.choice(LIVING_WORLD_ATMOGEN)
+SHIP_ATMO = random.choice(SHIP_ATMO_GEN)
+WORM_HOLE_SIZE = random.choice(WORMHOLE_SIZE_GEN)
+WORM_HOLE_STAB_GEN = random.randint(1, 100)
+WORM_HOLE_STAB = "{} Percent".format(WORM_HOLE_STAB_GEN)
+DAY_HOURS = random.randint(8, 96)
+DAY_LEN = "{} Hours".format(day_hours)
+YEAR_DAYS = random.randint(90, 1200)
+YEAR_LEN = "{} Days".format(YEAR_DAYS)
+PLANET_SIZE = random.randint(100000000, 100000000000)
+PLANET_DIAMETER = "{} Kilometers".format(PLANET_SIZE)
+
+ATMOGEN = [
+"Thin",
+"none",
+"Special"
+]
+
+LIVING_WORLD_ATMOGEN = [
+"Thin",
+"Normal",
+"Special"
+]
+
+SHIP_ATMO_GEN = [
+"Thin",
+"Normal",
+"Special",
+"None"
+]
+WORMHOLE_SIZE_GEN = [
+"Tiny",
+"Small",
+"Medium",
+"Large",
+"Huge",
+"Gargantuan",
+"Collosal"
+]
+
+DISPOSITION_GEN = [
+"Helpful",
+"Friendly",
+"Neutral",
+"Unfriendly",
+"Hostile"
+]
+DISPOSITION = random.choice(DISPOSITION_GEN)
+
+CON_GEN = [
+"Perfect",
+"Average",
+"Disrepair",
+"Derelict"
+]
+CON = random.choice(CON_GEN)
+
 def encountergen():
 
-	atmogen = (
-	"Thin",
-	"none",
-	"Special"
-	)
-	living_world_atmogen = (
-	"Thin",
-	"Normal",
-	"Special"
-	)
-	ship_atmo_gen = (
-	"Thin",
-	"Normal",
-	"Special",
-	"None"
-	)
-	wormhole_size_gen = (
-	"Tiny",
-	"Small",
-	"Medium",
-	"Large",
-	"Huge",
-	"Gargantuan",
-	"Collosal"
-	)
-	low_world_pop_gen = random.randint(0, 5000)
-	low_world_pop = "{} life signs".format(low_world_pop_gen)
-	med_world_pop_gen = random.randint(5001, 500000)
-	med_world_pop = "{} life signs".format(med_world_pop_gen)
-	high_world_pop_gen = random.randint(500000, 8000000000)
-	high_world_pop = "{} life signs".format(high_world_pop_gen)
-	world_atmo = random.choice(atmogen)
-	living_world_atmo = random.choice(living_world_atmogen)
-	ship_atmo = random.choice(ship_atmo_gen)
-	worm_hole_size = random.choice(wormhole_size_gen)
-	worm_hole_stab_gen = random.randint(1, 100)
-	worm_hole_stab = "{} Percent".format(worm_hole_stab_gen)
-	day_hours = random.randint(8, 96)
-	day_len = "{} Hours".format(day_hours)
-	year_days = random.randint(90, 1200)
-	year_len = "{} Days".format(year_days)
-	planet_size = random.randint(100000000, 100000000000)
-	planet_diameter = "{} Kilometers".format(planet_size)
+	world_pop = [
+	LOW_WORLD_POP,
+	MED_WORLD_POP,
+	HIGH_WORLD_POP
+	]
 
-	disposition_gen = (
-	"Helpful",
-	"Friendly",
-	"Neutral",
-	"Unfriendly",
-	"Hostile"
-	)
-	disposition = random.choice(disposition_gen)
-	con_gen = (
-	"Perfect",
-	"Average",
-	"Disrepair",
-	"Derelict"
-	)
-	con = random.choice(con_gen)
 	encounter_types = {
-	"Dead": {"Type": "Dead World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter}, 
-	"Volcanic": {"Type": "Volcanic World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter}, 
-	"Oceanic": {"Type": "Oceanic World", "Population": med_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
-	"Jungle": {"Type": "Jungle World", "Population": med_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
-	"Asteroid Field": {"Type": "Asteroid Field", "Population": low_world_pop, "Atmosphere": world_atmo},
-	"Wormhole": {"Type": "WormHole", "Size": worm_hole_size, "Stability": worm_hole_stab}, 
-	"Space Station": {"Type": "Space Station", "Population": low_world_pop, "Atmosphere": ship_atmo, "Station Condition": con, "Disposition": disposition},
-	"Ship": {"Type": "Ship", "Population": low_world_pop, "Atmosphere": world_atmo, "Condition": con, "Disposition": disposition},
-	"Gas Giant": {"Type": "Gas Giant", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
-	"Temperate World": {"Type": "Temperate World", "Population": high_world_pop, "Atmosphere": living_world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
-	"Ice Planet": {"Type": "Ice World", "Population": low_world_pop, "Atmosphere": world_atmo, "Day Length": day_len, "Year": year_len, "Planet Diameter": planet_diameter},
-	"Space Hulk": {"Type": "Space Hulk", "Population": low_world_pop, "Atmosphere": world_atmo}
+	"Dead": {"Type": "Dead World", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER}, 
+	"Volcanic": {"Type": "Volcanic World", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER}, 
+	"Oceanic": {"Type": "Oceanic World", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER},
+	"Jungle": {"Type": "Jungle World", "Population": world_pop, "Atmosphere": LIVING_WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER},
+	"Asteroid Field": {"Type": "Asteroid Field", "Population": world_pop, "Atmosphere": WORLD_ATMO},
+	"Wormhole": {"Type": "WormHole", "Size": WORM_HOLE_SIZE, "Stability": WORM_HOLE_STAB}, 
+	"Space Station": {"Type": "Space Station", "Population": world_pop, "Atmosphere": SHIP_ATMO, "Station Condition": CON, "Disposition": DISPOSITION},
+	"Ship": {"Type": "Ship", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Condition": CON, "Disposition": DISPOSITION},
+	"Gas Giant": {"Type": "Gas Giant", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER},
+	"Temperate World": {"Type": "Temperate World", "Population": world_pop, "Atmosphere": LIVING_WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER},
+	"Ice Planet": {"Type": "Ice World", "Population": world_pop, "Atmosphere": WORLD_ATMO, "Day Length": DAY_LEN, "Year": YEAR_LEN, "Planet Diameter": PLANET_DIAMETER},
+	"Space Hulk": {"Type": "Space Hulk", "Population": world_pop, "Atmosphere": WORLD_ATMO}
 	}
 	encounter = encounter_types[random.choice(encounter_types.keys())]
 	print encounter
