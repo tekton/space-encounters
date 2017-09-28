@@ -1,8 +1,10 @@
 import random
 from collections import OrderedDict
 import pprint
+import math
+import sys
 
-def statgen():
+def orcstatgen():
 	rtn_stats = OrderedDict()
 	rtn_stats["STR"] = random.randint(14,18)
 	rtn_stats["DEX"] = random.randint(12,16)
@@ -12,4 +14,3 @@ def statgen():
 	rtn_stats["CHA"] = random.randint(8,12)
 	return rtn_stats
 
-statgen()
