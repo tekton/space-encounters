@@ -1,5 +1,5 @@
 import random
-import pprint
+from pprint import pprint
 
 ATMOGEN = [
 "Thin",
@@ -120,4 +120,4 @@ def encountergen():
 	"Space Hulk": {"Type": "Space Hulk", "Population": populations("Space Hulk"), "Atmosphere": WORLD_ATMO}
 	}
 	encounter = encounter_types[random.choice(encounter_types.keys())]
-	pprint.pprint(encounter)
+	pprint(encounter)

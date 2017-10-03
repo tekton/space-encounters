@@ -32,9 +32,11 @@ def statgen(enemy, level):
 	rtn_stats["WILLSAVE"] = wismod + will
 	return rtn_stats
 
+
 if __name__ == "__main__":
 	enemy = str(sys.argv[1])
 	level = str(sys.argv[2])
 	stats = statgen(enemy, level)
 
 	pprint.pprint(stats)
+

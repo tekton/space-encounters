@@ -1,6 +1,7 @@
 import random
 
-STARGEN = (
+def stargen():
+	STARGEN = (
 	"Mainstream Star",
 	"Blue Giant",
 	"Red Giant",
@@ -9,7 +10,5 @@ STARGEN = (
 	"Binary Star System",
 	"Trinary Star System"
 	)
-Stars = random.choice(STARGEN)
-
-def stargen():
+	Stars = random.choice(STARGEN)
 	print Stars
