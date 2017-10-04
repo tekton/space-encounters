@@ -3,14 +3,12 @@ from collections import OrderedDict
 import pprint
 import math
 import sys
-from monster_stats import saves, monsterstatgen
+from monster_stats import monsterstatgen
 
 
 def statgen(enemy, level):
 	rtn_stats = OrderedDict()
-	rtn_stats = monsterstatgen(enemy)
-	rtn_saves = OrderedDict()
-	rtn_saves = saves(level)
+	rtn_stats = monsterstatgen(enemy, level)
 	strmod = int(math.floor((rtn_stats["STR"] -10)/2))
 	dexmod = int(math.floor((rtn_stats["DEX"] -10)/2))
 	conmod = int(math.floor((rtn_stats["CON"] -10)/2))
@@ -21,12 +19,12 @@ def statgen(enemy, level):
 	conmodtotal = monlevel*conmod
 	hitdie = int(random.randint(1,12))
 	hitpoints = (hitdie*monlevel) + conmodtotal
-	reflex = rtn_saves[rtn_stats["reflex"]]
-	fort = rtn_saves[rtn_stats["fort"]]
-	will = rtn_saves[rtn_stats["will"]]
+	reflex = rtn_stats["reflexmod"]
+	fort = rtn_stats["fortmod"]
+	will = rtn_stats["willmod"]
 	rtn_stats["HP"] = hitpoints
-	rtn_stats["MAT"] = strmod+monlevel
-	rtn_stats["RAT"] = dexmod+monlevel
+	rtn_stats["MAT"] = strmod+int(rtn_stats["BAB"])
+	rtn_stats["RAT"] = dexmod+int(rtn_stats["BAB"])
 	rtn_stats["REFSAVE"] = dexmod + reflex
 	rtn_stats["FORTSAVE"] = conmod + fort
 	rtn_stats["WILLSAVE"] = wismod + will
