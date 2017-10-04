@@ -12,6 +12,5 @@ while entitycount < 10:
 	objectgen.encountergen()
 	entitycount = entitycount +1
 
-while eventcount < 10:
-	spaceeventhook()
-	eventcount = eventcount +1
+
+spaceeventhook()

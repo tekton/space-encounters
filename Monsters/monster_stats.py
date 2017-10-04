@@ -8,7 +8,9 @@ import copy
 monsterstatranges = {
 	"orc": {"strength": random.randint(14,18), "dexterity": random.randint(12,16), "constitution": random.randint(12,18), "intelligence": random.randint(8,12), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "GoodMod", "will": "BadMod"},
 	"goblin": {"strength": random.randint(8,14), "dexterity": random.randint(12,16), "constitution": random.randint(10,14), "intelligence": random.randint(10,14), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod"},
-	"human": {"strength": random.randint(10,16), "dexterity": random.randint(10,16), "constitution": random.randint(10,16), "intelligence": random.randint(10,16), "wisdom": random.randint(10,16), "charisma": random.randint(10,16), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod"}, 
+	"human": {"strength": random.randint(10,16), "dexterity": random.randint(10,16), "constitution": random.randint(10,16), "intelligence": random.randint(10,16), "wisdom": random.randint(10,16), "charisma": random.randint(10,16), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod"},
+	"kobolds": {"strength": random.randint(8,14), "dexterity": random.randint(12,16), "constitution": random.randint(10,14), "intelligence": random.randint(10,14), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod"},
+	"Gnolls": {"strength": random.randint(14,18), "dexterity": random.randint(12,16), "constitution": random.randint(12,18), "intelligence": random.randint(8,12), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "GoodMod", "will": "BadMod"}
 }
 
 savedict = {
