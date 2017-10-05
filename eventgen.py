@@ -28,6 +28,7 @@ def spaceeventhook():
 		"Groundhog day style time loop, select one party member who remembers.",
 		"A pulse has emanated from your Drift Drive, your ship has fallen out of of Drift, all navigational points are slightly out of alignment.",
 		"Something is disrupting drift communication reducing your communications back to light speed. You and your crew are only able to react to what the system looked like X hours ago.",
+		"Every time you drop out of drift you are in the same place you entered drift. You were moving while in the drift."
 	]
 	events = random.choice(event_list)
 	print events
