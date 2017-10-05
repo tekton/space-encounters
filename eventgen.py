@@ -28,7 +28,19 @@ def spaceeventhook():
 		"Groundhog day style time loop, select one party member who remembers.",
 		"A pulse has emanated from your Drift Drive, your ship has fallen out of of Drift, all navigational points are slightly out of alignment.",
 		"Something is disrupting drift communication reducing your communications back to light speed. You and your crew are only able to react to what the system looked like X hours ago.",
-		"Every time you drop out of drift you are in the same place you entered drift. You were moving while in the drift."
+		"Every time you drop out of drift you are in the same place you entered drift. You were moving while in the drift.",
+		"Sensors indicate that somehow the underdeveloped planet you dropped out of Drift near has a society of preflight aliens living in a derelict starship."
+		"You find a paradise planet whose weather control system has become damaged",
+		"Cultists have set up shop in a nearby space hulk and are attempting to open a portal by drainging energy from the local star.",
+		"You've stumbled upon a pirate haven.",
+		"A high magic society has evolved on the planet without any technology.",
+		"Overuse of resources by the residents of the local planet has lead them to being 4d6 days away from a major catastrophe.",
+		"The players come out of the drift and have swapped bodies somehow. Roll randomly.",
+		"A message comes in from an old shady contact, telling the players of a job to steal high value cargo from a bad guy.",
+		"Its absolutely quiet. Nothing is happening.",
+		"The players emerge from the drift in the intended location, but its 2d3 days earlier that it was when they went in",
+		"A pact world cruiser demands the party stop and submit to inspection.",
+		"A scientist is capturing victims from many different races to use them as pitri dishes to develop vaccines."
 	]
 	events = random.choice(event_list)
 	print events

@@ -64,8 +64,7 @@ def populations(object_type):
 		]
 	if object_type == "Space Station":
 		pop = [
-			LOW_WORLD_POP, 
-			MED_WORLD_POP
+			LOW_WORLD_POP 
 		]
 	if object_type == "Asteroid Field":
 		pop = [

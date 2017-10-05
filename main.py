@@ -4,13 +4,11 @@ import random
 from eventgen import spaceeventhook
 
 
-entitycount = random.randint(1, 9)
-eventcount = random.randint(5,9)
+entitycount = random.randint(1, 5)
 stargen()
 
-while entitycount < 10:
+while entitycount < 6:
 	objectgen.encountergen()
 	entitycount = entitycount +1
-
 
 spaceeventhook()
