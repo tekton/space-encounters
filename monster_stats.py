@@ -5,7 +5,7 @@ import math
 import sys
 import copy
 
-monsterstatranges = {
+racestatranges = {
 	"orc": {"strength": random.randint(14,18), "dexterity": random.randint(12,16), "constitution": random.randint(12,18), "intelligence": random.randint(8,12), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "GoodMod", "will": "BadMod", "BaseAttack": "full"},
 	"goblin": {"strength": random.randint(8,14), "dexterity": random.randint(12,16), "constitution": random.randint(10,14), "intelligence": random.randint(10,14), "wisdom": random.randint(10,14), "charisma": random.randint(8,12), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod", "BaseAttack": "third"},
 	"human": {"strength": random.randint(10,16), "dexterity": random.randint(10,16), "constitution": random.randint(10,16), "intelligence": random.randint(10,16), "wisdom": random.randint(10,16), "charisma": random.randint(10,16), "reflex": "GoodMod", "fort": "BadMod", "will": "BadMod", "BaseAttack": "third"},
@@ -22,39 +22,39 @@ savedict = {
 
 def monsterstatgen(enemy, level):
 	rtn_stats = OrderedDict()
-	rtn_stats["STR"] = monsterstatranges[enemy]["strength"]
-	rtn_stats["DEX"] = monsterstatranges[enemy]["dexterity"]
-	rtn_stats["CON"] = monsterstatranges[enemy]["constitution"]
-	rtn_stats["INT"] = monsterstatranges[enemy]["intelligence"]
-	rtn_stats["WIS"] = monsterstatranges[enemy]["wisdom"]
-	rtn_stats["CHA"] = monsterstatranges[enemy]["charisma"]
+	rtn_stats["STR"] = racestatranges[enemy]["strength"]
+	rtn_stats["DEX"] = racestatranges[enemy]["dexterity"]
+	rtn_stats["CON"] = racestatranges[enemy]["constitution"]
+	rtn_stats["INT"] = racestatranges[enemy]["intelligence"]
+	rtn_stats["WIS"] = racestatranges[enemy]["wisdom"]
+	rtn_stats["CHA"] = racestatranges[enemy]["charisma"]
 	
-	if monsterstatranges[enemy]["reflex"] == "GoodMod":
+	if racestatranges[enemy]["reflex"] == "GoodMod":
 		rtn_stats["reflexmod"] = savedict["good"][str(level)]
-	if monsterstatranges[enemy]["reflex"] == "BadMod":
+	if racestatranges[enemy]["reflex"] == "BadMod":
 		rtn_stats["reflexmod"] = savedict["bad"][str(level)]
 	else:
 		print "Missing Reflex save mod value"
 	
-	if monsterstatranges[enemy]["fort"] == "GoodMod":
+	if racestatranges[enemy]["fort"] == "GoodMod":
 		rtn_stats["fortmod"] = savedict["good"][str(level)]
-	if monsterstatranges[enemy]["fort"] == "BadMod":
+	if racestatranges[enemy]["fort"] == "BadMod":
 		rtn_stats["fortmod"] = savedict["bad"][str(level)]
 	else:
 		print "Missing Fort save mod value"
 	
-	if monsterstatranges[enemy]["will"] == "GoodMod":
+	if racestatranges[enemy]["will"] == "GoodMod":
 		rtn_stats["willmod"] = savedict["good"][str(level)]
-	if monsterstatranges[enemy]["will"] == "BadMod":
+	if racestatranges[enemy]["will"] == "BadMod":
 		rtn_stats["willmod"] = savedict["bad"][str(level)]
 	else:
 		print "Missing Fort save mod value"
 
-	if monsterstatranges[enemy]["BaseAttack"] == "full":
+	if racestatranges[enemy]["BaseAttack"] == "full":
 		rtn_stats["BAB"] = str(level)
-	if monsterstatranges[enemy]["BaseAttack"] == "third":
+	if racestatranges[enemy]["BaseAttack"] == "third":
 		rtn_stats["BAB"] = math.floor(int(level) * 0.75)
-	if monsterstatranges[enemy]["BaseAttack"] == "half":
+	if racestatranges[enemy]["BaseAttack"] == "half":
 		rtn_stats["BAB"] = math.floor(int(level) * 0.5)
 	else:
 		print "Missing Fort save mod value"

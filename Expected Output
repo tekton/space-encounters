@@ -1,0 +1,25 @@
+Expected output for the tool:
+
+A star system, which contains between 1 and 9 entities. 
+	These entities should be one of the following:
+		Planets
+		Spacial Anomolies
+		Ships/ Space Stations
+
+Some adventure hooks, based on the number of entities. 
+	These should be appropriate for the type of entity generated. 
+
+If applicable, enemy ships for space combat. 
+	The players ships PL should be taken into account, and random encounter difficulty. 
+		Type of creatures piloting the ship should match those to be encountered on the planet. 
+			A crew will need to be generated for the ship in case a boarding action is performed.
+
+An enemy type or group should be specified to inform the GM of the types of encounters to place for ground based combat.
+The GM will then be able to generate as many encounters as he sees fit to challenge the party. 
+	The average party level should be accounted for. 
+	The number of players in the party should be accounted for. 
+	The handicap associated with each player should be specified. Default of no handicap. 
+	The proposed difficulty of the encounter.
+	Is this a boss encounter? Default is no. 
+	The GM should be able to specify a keyword for the encounter. the encounter can be made of enemies of a like keyword.
+
