@@ -203,15 +203,46 @@ shipdriftengines = {
 }
 
 shipexpansionbays = {
-	
-}
+	"Arcane laboratory": {"PCU": 1, "Cost": 1, "bays": 1},
+	"Cargo Hold": {"PCU": 0, "Cost": 0, "bays": 1},
+	"Escape pods": {"PCU": 2, "Cost": 1, "bays": 1},
+	"Guest Quarters": {"PCU": 1, "Cost": 1, "bays": 1},
+	"Hanger Bay": {"PCU": 30, "Cost": 10, "bays": 4},
+	"Life Boats": {"PCU": 5, "Cost": 3},
+	"Medical Bay": {"PCU": 4, "Cost": 8, "bays": 1},
+	"Passenger Seating": {"PCU": 0, "Cost": 0, "bays": 1},
+	"Power Core Housing": {"PCU": 0, "Cost": 10, "bays": 1},
+	"Gym": {"PCU": 0, "Cost": 1, "bays": 1},
+	"Trivid Den": {"PCU": 1, "Cost": 1, "bays": 1},
+	"Holosuite": {"PCU": 3, "Cost": 1, "bays": 1},
+	"Science Lab": {"PCU": 2, "Cost": 1, "bays": 1},
+	"Sealed Environment Chamber": {"PCU": 2, "Cost": 1, "bays": 1},
+	"Shuttle Bay": {"PCU": 10, "Cost": 4, "bays": 2},
+	"Smuggler Compartment": {"PCU": 4, "Cost": 2, "bays": 1},
+	"Synthesis bay": {"PCU": 2, "Cost": 1, "bays": 1},
+	"Tech Workshop": {"PCU": 3, "Cost": 1, "bays": 1}
+	}
 
 shipsecurity = {
-	
+	"Anti-hacking system": {"Cost": 3},
+	"Antipersonnel weapon - heavy": {"costmod": 5},
+	"Antipersonnel weapon - longarm": {"costmod": 0},
+	"Biometric Locks": {"Cost": 5},
+	"computer countermeasures": {"costmod": 0},
+	"Self Destruct Sytem": {"costmultiplier": 5}
 }
 
 shipsensors = {
-	
+	"Cut Rate": {"range": "short", "mod": -2, "cost": 1},
+	"Budget short-range": {"range": "short", "mod": 0, "cost": 2},
+	"Basic short-range": {"range": "short", "mod": 2, "cost": 3},
+	"Advanced short-range": {"range": "short", "mod": 4, "cost": 4},
+	"Budget medium-range": {"range": "medium", "mod": 0, "cost": 3},
+	"Basic medium-range": {"range": "medium", "mod": 2, "cost": 5},
+	"Advanced medium-range": {"range": "medium", "mod": 4, "cost": 8},
+	"Budget long-range": {"range": "long", "mod": 0, "cost": 6},
+	"Basic long-range": {"range": "long", "mod": 2, "cost": 10},
+	"Advanced long-range": {"range": "long", "mod": 4, "cost": 14},
 }
 
 shipshields = {
