@@ -270,7 +270,39 @@ shipshields = {
 	"Superior Shields 2": {"Total SP": "600", "Regen rate": "64 per min", "PCU": 160, "Cost": 40}
 }
 
-shipweapons = {
-	
+direct_ship_weapons = {
+	"Chain cannon": {"type": "Light", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost" 15, "Special": "Ripper"},
+	"Coilgun": {"type": "Light", "Range": "Long", "Damage": "4d4", "PCU": 10, "Cost" 6, "Special": "-"},
+	"Flak Thrower": {"type": "Light", "Range": "Short", "Damage": "3d4", "PCU": 10, "Cost" 5, "Special": "Point +8"},
+	"Gyrolaser": {"type": "Light", "Range": "Short", "Damage": "1d8", "PCU": 10, "Cost" 5, "Special": "Broad Arc"},
+	"Laser Net": {"type": "Light", "Range": "Short", "Damage": "2d6", "PCU": 10, "Cost" 9, "Special": "Point +10"},
+	"Light EMP Cannon": {"type": "Light", "Range": "Short", "Damage": "Special", "PCU": 10, "Cost" 8, "Special": "EMP"},
+	"Light Laser Cannon": {"type": "Light", "Range": "Short", "Damage": "2d4", "PCU": 5, "Cost" 2, "Special": "-"},
+	"Light Particle Beam": {"type": "Light", "Range": "Medium", "Damage": "3d6", "PCU": 10, "Cost" 10, "Special": "-"},
+	"Light Plasma Cannon": {"type": "Light", "Range": "Short", "Damage": "2d12", "PCU": 10, "Cost" 12, "Special": "-"},
+	"Graser": {"type": "Heavy", "Range": "Short", "Damage": "7d10", "PCU": 40, "Cost" 35, "Special": "Irradiate(Medium)"},
+	"Gravity Gun": {"type": "Heavy", "Range": "Medium", "Damage": "6d6", "PCU": 40, "Cost" 30, "Special": "Tractor Beam"},
+	"Heavy EMP Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "Special", "PCU": 30, "Cost" 24, "Special": "EMP"},
+	"Heavy Laser Array": {"type": "Heavy", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost" 10, "Special": "Array"},
+	"Heavy Laser Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "4d8", "PCU": 10, "Cost" 8, "Special": "-"},
+	"Heavy Laser Net": {"type": "Heavy", "Range": "Short", "Damage": "5d6", "PCU": 15, "Cost" 12, "Special": "Point +12"},
+	"Maser": {"type": "Heavy", "Range": "Long", "Damage": "6d10", "PCU": 35, "Cost" 22, "Special": "-"},
+	"Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 25, "Cost" 15, "Special": "-"},
+	"Persistent Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "10d6", "PCU": 40, "Cost" 25, "Special": "-"},
+	"Plasma cannon": {"type": "Heavy", "Range": "Medium", "Damage": "5d12", "PCU": 30, "Cost" 20, "Special": "-"},
+	"Railgun": {"type": "Heavy", "Range": "Long", "Damage": "8d4", "PCU": 20, "Cost" 15, "Special": "-"},
+	"Twin Laser": {"type": "Heavy", "Range": "Long", "Damage": "5d8", "PCU": 15, "Cost" 12, "Special": "-"},
+	"X-Laser cannon": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 40, "Cost" 35, "Special": "Line"},
+	"Capital Gravity Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 40, "Cost" 50, "Special": "Tractor Beam"},
+	"Mass Driver": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 25, "Cost" 25, "Special": "-"},
+	"Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 30, "Cost" 30, "Special": "-"},
+	"Persistent Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d10 x 10", "PCU": 50, "Cost" 40, "Special": "-"},
+	"Super EMP cannon": {"type": "Capital", "Range": "Long", "Damage": "Special", "PCU": 45, "Cost" 45, "Special": "EMP"},
+	"Super Plasma Cannon": {"type": "Capital", "Range": "Medium", "Damage": "3d6 x 10", "PCU": 45, "Cost" 35, "Special": "-"},
+	"Super X-laser Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 50, "Cost" 60, "Special": "Line"},
+	"Supergraser": {"type": "Capital", "Range": "Medium", "Damage": "2d8 x 10", "PCU": 50, "Cost" 60, "Special": "Irradiate(High)"},
+	"Superlaser": {"type": "Capital", "Range": "Long", "Damage": "2d4 x 10", "PCU": 20, "Cost" 20, "Special": "-"},
+	"Supermaser": {"type": "Capital", "Range": "Long", "Damage": "2d8 x 10", "PCU": 40, "Cost" 35, "Special": "-"},
+	"Vortex Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d12 x 10", "PCU": 55, "Cost" 75, "Special": "Vortex"},
 }
 
