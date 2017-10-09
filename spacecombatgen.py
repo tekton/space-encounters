@@ -306,3 +306,19 @@ direct_ship_weapons = {
 	"Vortex Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d12 x 10", "PCU": 55, "Cost" 75, "Special": "Vortex"},
 }
 
+tracking_ship_weapons = {
+	"High explosive missile launcher": {"type": "Light", "Range": "Long", "Speed": "12", "Damage": "4d8", "PCU": 10, "Cost": 4, "Special": "Limited Fire 5"},
+	"Light plasma torpedo launcher": {"type": "Light", "Range": "Long", "Speed": "14", "Damage": "3d8", "PCU": 5, "Cost": 5, "Special": "Limited Fire 5"},
+	"Light torpedo launcher": {"type": "Light", "Range": "Long", "Speed": "16", "Damage": "2d8", "PCU": 5, "Cost": 4, "Special": "Limited Fire 5"},
+	"Micromissile battery": {"type": "Light", "Range": "Long", "Speed": "10", "Damage": "2d6", "PCU": 10, "Cost": 3, "Special": "Array, Limited Fire 5"},
+	"Tactical Nuclear Missile Launcher": {"type": "Light", "Range": "Long", "Speed": "10", "Damage": "5d8", "PCU": 10, "Cost": 5, "Special": "Irradiate(low), Limited Fire 5"},
+	"Heavy Antimatter missile launcher": {"type": "Heavy", "Range": "Long", "Speed": "8", "Damage": "10d10", "PCU": 15, "Cost": 12, "Special": "Limited Fire 5"},
+	"Heavy Nuclear missile launcher": {"type": "Heavy", "Range": "Long", "Speed": "10", "Damage": "10d8", "PCU": 15, "Cost": 10, "Special": "Irradiate(medium), Limited Fire 5"},
+	"Heavy Plasma Torpedo launcher": {"type": "Heavy", "Range": "Long", "Speed": "12", "Damage": "5d10", "PCU": 10, "Cost": 10, "Special": "Limited Fire 5"},
+	"Heavy Torpedo launcher": {"type": "Heavy", "Range": "Long", "Speed": "14", "Damage": "5d8", "PCU": 10, "Cost": 8, "Special": "Limited Fire 5"},
+	"Antimatter Mega Missile Launcher": {"type": "Capital", "Range": "Long", "Speed": "6", "Damage": "4d10 X 10", "PCU": 15, "Cost": 25, "Special": "Limited Fire 5"},
+	"Hellfire Torpedo Launcher": {"type": "Capital", "Range": "Long", "Speed": "8", "Damage": "2d10 X 10", "PCU": 10, "Cost": 25, "Special": "Limited Fire 5"},
+	"Nuclear Mega Missile Launcher": {"type": "Capital", "Range": "Long", "Speed": "8", "Damage": "4d8 X 10", "PCU": 15, "Cost": 20, "Special": "Limited Fire 5"},
+	"Quantum Missile Launcher": {"type": "Capital", "Range": "Long", "Speed": "12", "Damage": "2d8 X 10", "PCU": 15, "Cost": 20, "Special": "Limited Fire 5, Quantum"},
+	"Solar Torpedo Launcher": {"type": "Capital", "Range": "Long", "Speed": "10", "Damage": "2d6 X 10", "PCU": 10, "Cost": 20, "Special": "Limited Fire 5"}
+}
