@@ -75,28 +75,28 @@ shipframes = {
 }
 
 shippower = {
-	"Micron Light": {"size": "tiny", "PCU": 50, "cost": 4},
-	"Micron Heavy": {"size": "tiny", "PCU": 70, "cost": 6},
-	"Micron Ultra": {"size": "tiny", "PCU": 80, "cost": 8},
-	"Arcus Light": {"size": ["tiny", "small"], "PCU": 70, "cost": 7},
-	"Pulse Brown": {"size": ["tiny", "small"], "PCU": 90, "cost": 9},
-	"Pulse Black": {"size": ["tiny", "small"], "PCU": 120, "cost": 12},
-	"Pulse White": {"size": ["tiny", "small"], "PCU": 140, "cost": 14},
-	"Pulse Gray": {"size": ["tiny", "small", "medium"], "PCU": 100, "cost": 10},
-	"Arcus Heavy": {"size": ["tiny", "small", "medium"], "PCU": 130, "cost": 13},
-	"Pulse Green": {"size": ["tiny", "small", "medium"], "PCU": 150, "cost": 15},
-	"Pulse Red": {"size": ["tiny", "small", "medium"], "PCU": 175, "cost": 17},
-	"Pulse Blue": {"size": ["tiny", "small", "medium"], "PCU": 200, "cost": 20},
-	"Arcus Ultra": {"size": ["small", "medium", "large"], "PCU": 150, "cost": 15},
-	"Arcus Maximum": {"size": ["small", "medium", "large"], "PCU": 200, "cost": 20},
-	"Pulse Orange": {"size": ["small", "medium", "large"], "PCU": 250, "cost": 25},
-	"Pulse Prismatic": {"size": ["small", "medium", "large"], "PCU": 300, "cost": 30},
-	"Nova Light": {"size": ["medium", "large", "huge"], "PCU": 150, "cost": 15},
-	"Nova Heavy": {"size": ["medium", "large", "huge"], "PCU": 200, "cost": 20},
-	"Nova Ultra": {"size": ["medium", "large", "huge"], "PCU": 300, "cost": 30},
-	"Gateway Light": {"size": ["large", "huge", "gargantuan"], "PCU": 300, "cost": 30},
-	"Gateway Heavy": {"size": ["large", "huge", "gargantuan"], "PCU": 400, "cost": 40},
-	"Gateway Ultra": {"size": ["huge", "gargantuan", "colossal"], "PCU": 500, "cost": 50}
+	"Micron_Light": {"size": "tiny", "PCU": 50, "cost": 4},
+	"Micron_Heavy": {"size": "tiny", "PCU": 70, "cost": 6},
+	"Micron_Ultra": {"size": "tiny", "PCU": 80, "cost": 8},
+	"Arcus_Light": {"size": ["tiny", "small"], "PCU": 70, "cost": 7},
+	"Pulse_Brown": {"size": ["tiny", "small"], "PCU": 90, "cost": 9},
+	"Pulse_Black": {"size": ["tiny", "small"], "PCU": 120, "cost": 12},
+	"Pulse_White": {"size": ["tiny", "small"], "PCU": 140, "cost": 14},
+	"Pulse_Gray": {"size": ["tiny", "small", "medium"], "PCU": 100, "cost": 10},
+	"Arcus_Heavy": {"size": ["tiny", "small", "medium"], "PCU": 130, "cost": 13},
+	"Pulse_Green": {"size": ["tiny", "small", "medium"], "PCU": 150, "cost": 15},
+	"Pulse_Red": {"size": ["tiny", "small", "medium"], "PCU": 175, "cost": 17},
+	"Pulse_Blue": {"size": ["tiny", "small", "medium"], "PCU": 200, "cost": 20},
+	"Arcus_Ultra": {"size": ["small", "medium", "large"], "PCU": 150, "cost": 15},
+	"Arcus_Maximum": {"size": ["small", "medium", "large"], "PCU": 200, "cost": 20},
+	"Pulse_Orange": {"size": ["small", "medium", "large"], "PCU": 250, "cost": 25},
+	"Pulse_Prismatic": {"size": ["small", "medium", "large"], "PCU": 300, "cost": 30},
+	"Nova_Light": {"size": ["medium", "large", "huge"], "PCU": 150, "cost": 15},
+	"Nova_Heavy": {"size": ["medium", "large", "huge"], "PCU": 200, "cost": 20},
+	"Nova_Ultra": {"size": ["medium", "large", "huge"], "PCU": 300, "cost": 30},
+	"Gateway_Light": {"size": ["large", "huge", "gargantuan"], "PCU": 300, "cost": 30},
+	"Gateway_Heavy": {"size": ["large", "huge", "gargantuan"], "PCU": 400, "cost": 40},
+	"Gateway_Ultra": {"size": ["huge", "gargantuan", "colossal"], "PCU": 500, "cost": 50}
 }
 
 shipthrusters = {
@@ -371,11 +371,14 @@ if __name__ == "__main__":
 		if core["cost"] <= shippowerBP:
 			powerlist[powercore] = core
 	ship["powercore"] = random.choice(powerlist.keys())
+	shipcore = ship["powercore"]
+	shippowercore = shippower[shipcore]
 	thrusterlist= {}
 	for thrusters, thruster in shipthrusters.iteritems():
 		if thruster["Cost"] <= shipthrusterBP:
 			thrusterlist[thrusters] = thruster
 	ship["thrusters"] = random.choice(thrusterlist.keys())
-	print ship
+	print shippowercore
+
 	
 	
