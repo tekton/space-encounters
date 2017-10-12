@@ -357,11 +357,25 @@ if __name__ == "__main__":
 	BP = int(PlayerBP * difficulty)
 	ship_hp_increase = int(ship_tier["HP_Increase"])
 	shipframeBP = int(BP * .2)
+	shippowerBP = int(BP * .2)
+	shipthrusterBP = int(BP * .15)
 	frameslist = {}
 	for framename, frame in shipframes.iteritems():
 		if frame["Cost"] <= shipframeBP:
 			frameslist[framename] = frame
 	ship["frame"] = random.choice(frameslist.keys())
-	print ship["frame"]
+	shipframe = ship["frame"]
+	shipframestats = shipframes[shipframe]
+	powerlist= {}
+	for powercore, core in shippower.iteritems():
+		if core["cost"] <= shippowerBP:
+			powerlist[powercore] = core
+	ship["powercore"] = random.choice(powerlist.keys())
+	thrusterlist= {}
+	for thrusters, thruster in shipthrusters.iteritems():
+		if thruster["Cost"] <= shipthrusterBP:
+			thrusterlist[thrusters] = thruster
+	ship["thrusters"] = random.choice(thrusterlist.keys())
+	print ship
 	
 	
