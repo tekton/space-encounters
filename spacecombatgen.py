@@ -358,13 +358,10 @@ if __name__ == "__main__":
 	ship_hp_increase = int(ship_tier["HP_Increase"])
 	shipframeBP = int(BP * .2)
 	frameslist = {}
-	for frames in shipframes:
-		# if frames["Cost"] <= shipframeBP:
-		# 	frameslist[frames]
-		print frames["Cost"]
-
-	pprint(BP)
-	pprint(ship_hp_increase)
-	pprint(shipframeBP)
-	pprint(frameslist)
+	for framename, frame in shipframes.iteritems():
+		if frame["Cost"] <= shipframeBP:
+			frameslist[framename] = frame
+	ship["frame"] = random.choice(frameslist.keys())
+	print ship["frame"]
+	
 	
