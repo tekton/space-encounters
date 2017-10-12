@@ -1,6 +1,8 @@
 import math
 import sys
 import random
+from collections import OrderedDict
+from pprint import pprint
 
 
 shiptiers = {
@@ -8,7 +10,7 @@ shiptiers = {
 	"1/3": {"Build_points": 30, "HP_Increase": 0},
 	"1/2": {"Build_points": 40, "HP_Increase": 0},
 	"1": {"Build_points": 55, "HP_Increase": 0},
-	"2": {"Build_points": 75 "HP_Increase": 0},
+	"2": {"Build_points": 75, "HP_Increase": 0},
 	"3": {"Build_points": 95, "HP_Increase": 0},
 	"4": {"Build_points": 115, "HP_Increase": 1},
 	"5": {"Build_points": 135, "HP_Increase": 1},
@@ -29,14 +31,22 @@ shiptiers = {
 	"20": {"Build_points": 1000, "HP_Increase": 5}
 }
 
+difficultymod = {
+	"very_easy": .25,
+	"easy": .5,
+	"average": .75,
+	"hard": 1,
+	"very_hard": 1.25
+}
+
 shipsizes = {
-	"tiny": {"category": 1, "Length": random.ranint(20, 60), "Weight": random.randint(3, 20), "AC and TL mod": 2},
-	"small": {"category": 2, "Length": random.ranint(60, 120), "Weight": random.randint(20, 40), "AC and TL mod": 1},
-	"medium": {"category": 3, "Length": random.ranint(120, 300), "Weight": random.randint(40, 150), "AC and TL mod": 0},
-	"large": {"category": 4, "Length": random.ranint(300, 800), "Weight": random.randint(150, 420), "AC and TL mod": -1},
-	"huge": {"category": 5, "Length": random.ranint(800, 2000), "Weight": random.randint(420, 1200), "AC and TL mod": -2},
-	"gargantuan": {"category": 6, "Length": random.ranint(2000, 15000), "Weight": random.randint(1200, 8000), "AC and TL mod": -4},
-	"colossal": {"category": 7, "Length": random.ranint(15000, 45000), "Weight": random.randint(8000, 20000), "AC and TL mod": -8}
+	"tiny": {"category": 1, "Length": random.randint(20, 60), "Weight": random.randint(3, 20), "AC and TL mod": 2},
+	"small": {"category": 2, "Length": random.randint(60, 120), "Weight": random.randint(20, 40), "AC and TL mod": 1},
+	"medium": {"category": 3, "Length": random.randint(120, 300), "Weight": random.randint(40, 150), "AC and TL mod": 0},
+	"large": {"category": 4, "Length": random.randint(300, 800), "Weight": random.randint(150, 420), "AC and TL mod": -1},
+	"huge": {"category": 5, "Length": random.randint(800, 2000), "Weight": random.randint(420, 1200), "AC and TL mod": -2},
+	"gargantuan": {"category": 6, "Length": random.randint(2000, 15000), "Weight": random.randint(1200, 8000), "AC and TL mod": -4},
+	"colossal": {"category": 7, "Length": random.randint(15000, 45000), "Weight": random.randint(8000, 20000), "AC and TL mod": -8}
 }
 
 shipmaneuverability = {
@@ -177,21 +187,21 @@ shipcrewquarters = {
 }
 
 shipdefensivecounter = {
-	"Mk 1 Defenses" {"TL Bonus": 1, "PCU": 1, "Cost": 2},
-	"Mk 2 Defenses" {"TL Bonus": 2, "PCU": 1, "Cost": 3},
-	"Mk 3 Defenses" {"TL Bonus": 3, "PCU": 2, "Cost": 4},
-	"Mk 4 Defenses" {"TL Bonus": 4, "PCU": 3, "Cost": 6},
-	"Mk 5 Defenses" {"TL Bonus": 5, "PCU": 4, "Cost": 8},
-	"Mk 6 Defenses" {"TL Bonus": 6, "PCU": 5, "Cost": 11},
-	"Mk 7 Defenses" {"TL Bonus": 7, "PCU": 7, "Cost": 14},
-	"Mk 8 Defenses" {"TL Bonus": 8, "PCU": 9, "Cost": 18},
-	"Mk 9 Defenses" {"TL Bonus": 9, "PCU": 11, "Cost": 22},
-	"Mk 10 Defenses" {"TL Bonus": 10, "PCU": 13, "Cost": 27},
-	"Mk 11 Defenses" {"TL Bonus": 11, "PCU": 16, "Cost": 33},
-	"Mk 12 Defenses" {"TL Bonus": 12, "PCU": 20, "Cost": 40},
-	"Mk 13 Defenses" {"TL Bonus": 13, "PCU": 25, "Cost": 50},
-	"Mk 14 Defenses" {"TL Bonus": 14, "PCU": 32, "Cost": 65,
-	"Mk 15 Defenses" {"TL Bonus": 15, "PCU": 45, "Cost": 90},
+	"Mk 1 Defenses": {"TL Bonus": 1, "PCU": 1, "Cost": 2},
+	"Mk 2 Defenses": {"TL Bonus": 2, "PCU": 1, "Cost": 3},
+	"Mk 3 Defenses": {"TL Bonus": 3, "PCU": 2, "Cost": 4},
+	"Mk 4 Defenses": {"TL Bonus": 4, "PCU": 3, "Cost": 6},
+	"Mk 5 Defenses": {"TL Bonus": 5, "PCU": 4, "Cost": 8},
+	"Mk 6 Defenses": {"TL Bonus": 6, "PCU": 5, "Cost": 11},
+	"Mk 7 Defenses": {"TL Bonus": 7, "PCU": 7, "Cost": 14},
+	"Mk 8 Defenses": {"TL Bonus": 8, "PCU": 9, "Cost": 18},
+	"Mk 9 Defenses": {"TL Bonus": 9, "PCU": 11, "Cost": 22},
+	"Mk 10 Defenses": {"TL Bonus": 10, "PCU": 13, "Cost": 27},
+	"Mk 11 Defenses": {"TL Bonus": 11, "PCU": 16, "Cost": 33},
+	"Mk 12 Defenses": {"TL Bonus": 12, "PCU": 20, "Cost": 40},
+	"Mk 13 Defenses": {"TL Bonus": 13, "PCU": 25, "Cost": 50},
+	"Mk 14 Defenses": {"TL Bonus": 14, "PCU": 32, "Cost": 65},
+	"Mk 15 Defenses": {"TL Bonus": 15, "PCU": 45, "Cost": 90},
 }
 
 shipdriftengines = {
@@ -271,39 +281,39 @@ shipshields = {
 }
 
 direct_ship_weapons = {
-	"Chain cannon": {"type": "Light", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost" 15, "Special": "Ripper"},
-	"Coilgun": {"type": "Light", "Range": "Long", "Damage": "4d4", "PCU": 10, "Cost" 6, "Special": "-"},
-	"Flak Thrower": {"type": "Light", "Range": "Short", "Damage": "3d4", "PCU": 10, "Cost" 5, "Special": "Point +8"},
-	"Gyrolaser": {"type": "Light", "Range": "Short", "Damage": "1d8", "PCU": 10, "Cost" 5, "Special": "Broad Arc"},
-	"Laser Net": {"type": "Light", "Range": "Short", "Damage": "2d6", "PCU": 10, "Cost" 9, "Special": "Point +10"},
-	"Light EMP Cannon": {"type": "Light", "Range": "Short", "Damage": "Special", "PCU": 10, "Cost" 8, "Special": "EMP"},
-	"Light Laser Cannon": {"type": "Light", "Range": "Short", "Damage": "2d4", "PCU": 5, "Cost" 2, "Special": "-"},
-	"Light Particle Beam": {"type": "Light", "Range": "Medium", "Damage": "3d6", "PCU": 10, "Cost" 10, "Special": "-"},
-	"Light Plasma Cannon": {"type": "Light", "Range": "Short", "Damage": "2d12", "PCU": 10, "Cost" 12, "Special": "-"},
-	"Graser": {"type": "Heavy", "Range": "Short", "Damage": "7d10", "PCU": 40, "Cost" 35, "Special": "Irradiate(Medium)"},
-	"Gravity Gun": {"type": "Heavy", "Range": "Medium", "Damage": "6d6", "PCU": 40, "Cost" 30, "Special": "Tractor Beam"},
-	"Heavy EMP Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "Special", "PCU": 30, "Cost" 24, "Special": "EMP"},
-	"Heavy Laser Array": {"type": "Heavy", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost" 10, "Special": "Array"},
-	"Heavy Laser Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "4d8", "PCU": 10, "Cost" 8, "Special": "-"},
-	"Heavy Laser Net": {"type": "Heavy", "Range": "Short", "Damage": "5d6", "PCU": 15, "Cost" 12, "Special": "Point +12"},
-	"Maser": {"type": "Heavy", "Range": "Long", "Damage": "6d10", "PCU": 35, "Cost" 22, "Special": "-"},
-	"Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 25, "Cost" 15, "Special": "-"},
-	"Persistent Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "10d6", "PCU": 40, "Cost" 25, "Special": "-"},
-	"Plasma cannon": {"type": "Heavy", "Range": "Medium", "Damage": "5d12", "PCU": 30, "Cost" 20, "Special": "-"},
-	"Railgun": {"type": "Heavy", "Range": "Long", "Damage": "8d4", "PCU": 20, "Cost" 15, "Special": "-"},
-	"Twin Laser": {"type": "Heavy", "Range": "Long", "Damage": "5d8", "PCU": 15, "Cost" 12, "Special": "-"},
-	"X-Laser cannon": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 40, "Cost" 35, "Special": "Line"},
-	"Capital Gravity Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 40, "Cost" 50, "Special": "Tractor Beam"},
-	"Mass Driver": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 25, "Cost" 25, "Special": "-"},
-	"Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 30, "Cost" 30, "Special": "-"},
-	"Persistent Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d10 x 10", "PCU": 50, "Cost" 40, "Special": "-"},
-	"Super EMP cannon": {"type": "Capital", "Range": "Long", "Damage": "Special", "PCU": 45, "Cost" 45, "Special": "EMP"},
-	"Super Plasma Cannon": {"type": "Capital", "Range": "Medium", "Damage": "3d6 x 10", "PCU": 45, "Cost" 35, "Special": "-"},
-	"Super X-laser Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 50, "Cost" 60, "Special": "Line"},
-	"Supergraser": {"type": "Capital", "Range": "Medium", "Damage": "2d8 x 10", "PCU": 50, "Cost" 60, "Special": "Irradiate(High)"},
-	"Superlaser": {"type": "Capital", "Range": "Long", "Damage": "2d4 x 10", "PCU": 20, "Cost" 20, "Special": "-"},
-	"Supermaser": {"type": "Capital", "Range": "Long", "Damage": "2d8 x 10", "PCU": 40, "Cost" 35, "Special": "-"},
-	"Vortex Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d12 x 10", "PCU": 55, "Cost" 75, "Special": "Vortex"},
+	"Chain cannon": {"type": "Light", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost": 15, "Special": "Ripper"},
+	"Coilgun": {"type": "Light", "Range": "Long", "Damage": "4d4", "PCU": 10, "Cost": 6, "Special": "-"},
+	"Flak Thrower": {"type": "Light", "Range": "Short", "Damage": "3d4", "PCU": 10, "Cost": 5, "Special": "Point +8"},
+	"Gyrolaser": {"type": "Light", "Range": "Short", "Damage": "1d8", "PCU": 10, "Cost": 5, "Special": "Broad Arc"},
+	"Laser Net": {"type": "Light", "Range": "Short", "Damage": "2d6", "PCU": 10, "Cost": 9, "Special": "Point +10"},
+	"Light EMP Cannon": {"type": "Light", "Range": "Short", "Damage": "Special", "PCU": 10, "Cost": 8, "Special": "EMP"},
+	"Light Laser Cannon": {"type": "Light", "Range": "Short", "Damage": "2d4", "PCU": 5, "Cost": 2, "Special": "-"},
+	"Light Particle Beam": {"type": "Light", "Range": "Medium", "Damage": "3d6", "PCU": 10, "Cost": 10, "Special": "-"},
+	"Light Plasma Cannon": {"type": "Light", "Range": "Short", "Damage": "2d12", "PCU": 10, "Cost": 12, "Special": "-"},
+	"Graser": {"type": "Heavy", "Range": "Short", "Damage": "7d10", "PCU": 40, "Cost": 35, "Special": "Irradiate(Medium)"},
+	"Gravity Gun": {"type": "Heavy", "Range": "Medium", "Damage": "6d6", "PCU": 40, "Cost": 30, "Special": "Tractor Beam"},
+	"Heavy EMP Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "Special", "PCU": 30, "Cost": 24, "Special": "EMP"},
+	"Heavy Laser Array": {"type": "Heavy", "Range": "Short", "Damage": "6d4", "PCU": 15, "Cost": 10, "Special": "Array"},
+	"Heavy Laser Cannon": {"type": "Heavy", "Range": "Medium", "Damage": "4d8", "PCU": 10, "Cost": 8, "Special": "-"},
+	"Heavy Laser Net": {"type": "Heavy", "Range": "Short", "Damage": "5d6", "PCU": 15, "Cost": 12, "Special": "Point +12"},
+	"Maser": {"type": "Heavy", "Range": "Long", "Damage": "6d10", "PCU": 35, "Cost": 22, "Special": "-"},
+	"Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 25, "Cost": 15, "Special": "-"},
+	"Persistent Particle Beam": {"type": "Heavy", "Range": "Long", "Damage": "10d6", "PCU": 40, "Cost": 25, "Special": "-"},
+	"Plasma cannon": {"type": "Heavy", "Range": "Medium", "Damage": "5d12", "PCU": 30, "Cost": 20, "Special": "-"},
+	"Railgun": {"type": "Heavy", "Range": "Long", "Damage": "8d4", "PCU": 20, "Cost": 15, "Special": "-"},
+	"Twin Laser": {"type": "Heavy", "Range": "Long", "Damage": "5d8", "PCU": 15, "Cost": 12, "Special": "-"},
+	"X-Laser cannon": {"type": "Heavy", "Range": "Long", "Damage": "8d6", "PCU": 40, "Cost": 35, "Special": "Line"},
+	"Capital Gravity Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 40, "Cost": 50, "Special": "Tractor Beam"},
+	"Mass Driver": {"type": "Capital", "Range": "Long", "Damage": "2d6 x 10", "PCU": 25, "Cost": 25, "Special": "-"},
+	"Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 30, "Cost": 30, "Special": "-"},
+	"Persistent Particle Beam Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d10 x 10", "PCU": 50, "Cost": 40, "Special": "-"},
+	"Super EMP cannon": {"type": "Capital", "Range": "Long", "Damage": "Special", "PCU": 45, "Cost": 45, "Special": "EMP"},
+	"Super Plasma Cannon": {"type": "Capital", "Range": "Medium", "Damage": "3d6 x 10", "PCU": 45, "Cost": 35, "Special": "-"},
+	"Super X-laser Cannon": {"type": "Capital", "Range": "Long", "Damage": "3d4 x 10", "PCU": 50, "Cost": 60, "Special": "Line"},
+	"Supergraser": {"type": "Capital", "Range": "Medium", "Damage": "2d8 x 10", "PCU": 50, "Cost": 60, "Special": "Irradiate(High)"},
+	"Superlaser": {"type": "Capital", "Range": "Long", "Damage": "2d4 x 10", "PCU": 20, "Cost": 20, "Special": "-"},
+	"Supermaser": {"type": "Capital", "Range": "Long", "Damage": "2d8 x 10", "PCU": 40, "Cost": 35, "Special": "-"},
+	"Vortex Cannon": {"type": "Capital", "Range": "Long", "Damage": "2d12 x 10", "PCU": 55, "Cost": 75, "Special": "Vortex"},
 }
 
 tracking_ship_weapons = {
@@ -322,3 +332,39 @@ tracking_ship_weapons = {
 	"Quantum Missile Launcher": {"type": "Capital", "Range": "Long", "Speed": "12", "Damage": "2d8 X 10", "PCU": 15, "Cost": 20, "Special": "Limited Fire 5, Quantum"},
 	"Solar Torpedo Launcher": {"type": "Capital", "Range": "Long", "Speed": "10", "Damage": "2d6 X 10", "PCU": 10, "Cost": 20, "Special": "Limited Fire 5"}
 }
+
+if __name__ == "__main__":
+	ship = OrderedDict()
+	ship = {
+		"frame": "value", #required
+		"powercore": "value", #required
+		"thrusters": "value", #required
+		"weapons": {"weapon": "value"}, #required
+		"Computer": "Value", #required
+		"drift engine": "value", #required
+		"shields": "value", #required
+		"armor": "value", #required
+		"crew quarters": "value", #optional
+		"sensors": "value", #optional
+		"security": "value", #optional
+		"expansion bays": {"bay1": "value"}, #optional
+		"Defensive Countermeasures": "value" #optional
+		}
+	tier = str(sys.argv[1])
+	difficulty = difficultymod[str(sys.argv[2])]
+	ship_tier = shiptiers[tier]
+	PlayerBP = ship_tier["Build_points"]
+	BP = int(PlayerBP * difficulty)
+	ship_hp_increase = int(ship_tier["HP_Increase"])
+	shipframeBP = int(BP * .2)
+	frameslist = {}
+	for frames in shipframes:
+		# if frames["Cost"] <= shipframeBP:
+		# 	frameslist[frames]
+		print frames["Cost"]
+
+	pprint(BP)
+	pprint(ship_hp_increase)
+	pprint(shipframeBP)
+	pprint(frameslist)
+	
