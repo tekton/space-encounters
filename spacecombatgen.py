@@ -1,3 +1,4 @@
+import argparse
 import math
 import sys
 import random
@@ -5,30 +6,32 @@ from collections import OrderedDict
 from pprint import pprint
 
 
+# naming conventions- why are they important?
+
 shiptiers = {
-	"1/4": {"Build_points": 25, "HP_Increase": 0},
-	"1/3": {"Build_points": 30, "HP_Increase": 0},
-	"1/2": {"Build_points": 40, "HP_Increase": 0},
-	"1": {"Build_points": 55, "HP_Increase": 0},
-	"2": {"Build_points": 75, "HP_Increase": 0},
-	"3": {"Build_points": 95, "HP_Increase": 0},
-	"4": {"Build_points": 115, "HP_Increase": 1},
-	"5": {"Build_points": 135, "HP_Increase": 1},
-	"6": {"Build_points": 155, "HP_Increase": 1},
-	"7": {"Build_points": 180, "HP_Increase": 1},
-	"8": {"Build_points": 205, "HP_Increase": 2},
-	"9": {"Build_points": 230, "HP_Increase": 2},
-	"10": {"Build_points": 270, "HP_Increase": 2},
-	"11": {"Build_points": 310, "HP_Increase": 2},
-	"12": {"Build_points": 350, "HP_Increase": 3},
-	"13": {"Build_points": 400, "HP_Increase": 3},
-	"14": {"Build_points": 450, "HP_Increase": 3},
-	"15": {"Build_points": 500, "HP_Increase": 3},
-	"16": {"Build_points": 600, "HP_Increase": 4},
-	"17": {"Build_points": 700, "HP_Increase": 4},
-	"18": {"Build_points": 800, "HP_Increase": 4},
-	"19": {"Build_points": 900, "HP_Increase": 4},
-	"20": {"Build_points": 1000, "HP_Increase": 5}
+	"1/4": {"points": 25, "hp_multiplier": 0},
+	"1/3": {"points": 30, "hp_multiplier": 0},
+	"1/2": {"points": 40, "hp_multiplier": 0},
+	"1": {"points": 55, "hp_multiplier": 0},
+	"2": {"points": 75, "hp_multiplier": 0},
+	"3": {"points": 95, "hp_multiplier": 0},
+	"4": {"points": 115, "hp_multiplier": 1},
+	"5": {"points": 135, "hp_multiplier": 1},
+	"6": {"points": 155, "hp_multiplier": 1},
+	"7": {"points": 180, "hp_multiplier": 1},
+	"8": {"points": 205, "hp_multiplier": 2},
+	"9": {"points": 230, "hp_multiplier": 2},
+	"10": {"points": 270, "hp_multiplier": 2},
+	"11": {"points": 310, "hp_multiplier": 2},
+	"12": {"points": 350, "hp_multiplier": 3},
+	"13": {"points": 400, "hp_multiplier": 3},
+	"14": {"points": 450, "hp_multiplier": 3},
+	"15": {"points": 500, "hp_multiplier": 3},
+	"16": {"points": 600, "hp_multiplier": 4},
+	"17": {"points": 700, "hp_multiplier": 4},
+	"18": {"points": 800, "hp_multiplier": 4},
+	"19": {"points": 900, "hp_multiplier": 4},
+	"20": {"points": 1000, "hp_multiplier": 5}
 }
 
 difficultymod = {
@@ -39,14 +42,89 @@ difficultymod = {
 	"very_hard": 1.25
 }
 
+
+# this won't do what you want if you generate multiple ships of the same size!
 shipsizes = {
-	"tiny": {"category": 1, "Length": random.randint(20, 60), "Weight": random.randint(3, 20), "AC and TL mod": 2},
-	"small": {"category": 2, "Length": random.randint(60, 120), "Weight": random.randint(20, 40), "AC and TL mod": 1},
-	"medium": {"category": 3, "Length": random.randint(120, 300), "Weight": random.randint(40, 150), "AC and TL mod": 0},
-	"large": {"category": 4, "Length": random.randint(300, 800), "Weight": random.randint(150, 420), "AC and TL mod": -1},
-	"huge": {"category": 5, "Length": random.randint(800, 2000), "Weight": random.randint(420, 1200), "AC and TL mod": -2},
-	"gargantuan": {"category": 6, "Length": random.randint(2000, 15000), "Weight": random.randint(1200, 8000), "AC and TL mod": -4},
-	"colossal": {"category": 7, "Length": random.randint(15000, 45000), "Weight": random.randint(8000, 20000), "AC and TL mod": -8}
+	"tiny": {
+		"category": 1,
+		"length": {
+			"min": 20,
+			"max": 60
+		},
+		"weight": {
+			"min": 3,
+			"max": 20
+		},
+		"mod": 2
+	},
+	"small": {
+		"category": 2,
+		"length": {
+			"min": 60,
+			"max": 120
+		},
+		"weight": {
+			"min": 20,
+			"max": 40
+		}, "mod": 1
+	},
+	"medium": {
+		"category": 3,
+		"length": {
+			"min": 120,
+			"max": 300
+		},
+		"weight": {
+			"min": 40,
+			"max": 150
+		}, "mod": 0
+	},
+	"large": {
+		"category": 4,
+		"length": {
+			"min": 300,
+			"max": 800
+		},
+		"weight": {
+			"min": 150,
+			"max": 420
+		}, "mod": -1
+	},
+	"huge": {
+		"category": 5,
+		"length": {
+			"min": 800,
+			"max": 2000
+		},
+		"weight": {
+			"min": 420,
+			"max": 1200
+		},
+		"mod": -2
+	},
+	"gargantuan": {
+		"category": 6,
+		"length": {
+			"min": 2000,
+			"max": 15000
+		},
+		"weight": {
+			"min": 1200,
+			"max": 8000
+		}, "mod": -4
+	},
+	"colossal": {
+		"category": 7,
+		"length": {
+			"min": 15000,
+			"max": 45000
+		},
+		"weight": {
+			"min": 8000,
+			"max": 20000
+		},
+		"mod": -8
+	}
 }
 
 shipmaneuverability = {
@@ -317,7 +395,15 @@ direct_ship_weapons = {
 }
 
 tracking_ship_weapons = {
-	"High explosive missile launcher": {"type": "Light", "Range": "Long", "Speed": "12", "Damage": "4d8", "PCU": 10, "Cost": 4, "Special": "Limited Fire 5"},
+	"High explosive missile launcher": {
+		"type": "Light",
+		"Range": "Long",
+		"Speed": "12",
+		"Damage": "4d8",
+		"PCU": 10,
+		"Cost": 4,
+		"Special": "Limited Fire 5"
+	},
 	"Light plasma torpedo launcher": {"type": "Light", "Range": "Long", "Speed": "14", "Damage": "3d8", "PCU": 5, "Cost": 5, "Special": "Limited Fire 5"},
 	"Light torpedo launcher": {"type": "Light", "Range": "Long", "Speed": "16", "Damage": "2d8", "PCU": 5, "Cost": 4, "Special": "Limited Fire 5"},
 	"Micromissile battery": {"type": "Light", "Range": "Long", "Speed": "10", "Damage": "2d6", "PCU": 10, "Cost": 3, "Special": "Array, Limited Fire 5"},
@@ -333,7 +419,8 @@ tracking_ship_weapons = {
 	"Solar Torpedo Launcher": {"type": "Capital", "Range": "Long", "Speed": "10", "Damage": "2d6 X 10", "PCU": 10, "Cost": 20, "Special": "Limited Fire 5"}
 }
 
-if __name__ == "__main__":
+
+def gen_ship_orig():
 	ship = OrderedDict()
 	forward = []
 	port = []
@@ -362,9 +449,9 @@ if __name__ == "__main__":
 	tier = str(sys.argv[1])
 	difficulty = difficultymod[str(sys.argv[2])]
 	ship_tier = shiptiers[tier]
-	PlayerBP = ship_tier["Build_points"]
+	PlayerBP = ship_tier["points"]
 	BP = int(PlayerBP * difficulty)
-	ship_hp_increase = int(ship_tier["HP_Increase"])
+	ship_hp_multiplier = int(ship_tier["hp_multiplier"])
 	shipframeBP = int(BP * .2)
 	shippowerBP = int(BP * .2)
 	shipthrusterBP = int(BP * .15)
@@ -414,13 +501,13 @@ if __name__ == "__main__":
 	for directweapons, weapon in direct_ship_weapons.iteritems():
 		if weapon["Cost"] <= shipweaponsBP and weapon["type"] == "Light":
 			directweaponlist[directweapons] = weapon
-	
 	while shipforwardlightweapons > 0:
 		forward = forward.append(random.choice(directweaponlist.keys()))
 		shipforwardlightweapons = shipforwardlightweapons - 1
-
-
 	print ship
 
-	
+
+if __name__ == "__main__":
+	# argument parsing and you
+	pass
 	
