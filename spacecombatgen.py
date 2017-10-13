@@ -58,20 +58,20 @@ shipmaneuverability = {
 }
 
 shipframes = {
-	"Racer": {"Cost": 4, "Size": "tiny", "Maneuverability": "Prefect", "HP": 20, "HP increment": 5, "DT": "-", "CT": "4", "Forward": {"light": 1}, "Port": 0, "Starboard": 0, "Aft": {"light": 1}, "turret": 0, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "1"},
-	"Interceptor": {"Cost": 6, "Size": "tiny", "Maneuverability": "Prefect", "HP": 30, "HP increment": 5, "DT": "-", "CT": "6", "Forward": {"light": 2}, "Port": 0, "Starboard": 0, "Aft": 0, "turret": 0, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "1"},
-	"Fighter": {"Cost": 8, "Size": "tiny", "Maneuverability": "Good", "HP": 35, "HP increment": 5, "DT": "-", "CT": "7", "Forward": {"light": 2}, "Port": 0, "Starboard": 0, "Aft": {"light": 1}, "turret": 0, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "2"},
-	"Shuttle": {"Cost": 6, "Size": "small", "Maneuverability": "Perfect", "HP": 35, "HP increment": 5, "DT": "-", "CT": "7", "Forward": {"light": 1}, "Port": 0, "Starboard": 0, "Aft": 0, "turret": 0, "Expansion Bays": 3, "Minimum Crew": "1", "Max Crew": "4"},
-	"Light Freighter": {"Cost": 10, "Size": "small", "Maneuverability": "Good", "HP": 40, "HP increment": 10, "DT": "-", "CT": "8", "Forward": {"light": 2}, "Port": {"light": 1}, "Starboard": {"light": 1}, "Aft": 0, "turret": 0, "Expansion Bays": 3, "Minimum Crew": "1", "Max Crew": "6"},
-	"Explorer": {"Cost": 12, "Size": "medium", "Maneuverability": "Good", "HP": 55, "HP increment": 10, "DT": "-", "CT": "11", "Forward": {"light": 1}, "Port": {"light": 1}, "Starboard": {"light": 1}, "Aft": 0, "turret": {"light": 1}, "Expansion Bays": 4, "Minimum Crew": "1", "Max Crew": "6"},
-	"Transport": {"Cost": 15, "Size": "medium", "Maneuverability": "Average", "HP": 70, "HP increment": 15, "DT": "-", "CT": "14", "Forward": {"light": 1, "heavy": 1}, "Port": 0, "Starboard": 0, "Aft": {"light": 1}, "turret": {"light": 2}, "Expansion Bays": 5, "Minimum Crew": "1", "Max Crew": "6"},
-	"Destroyer": {"Cost": 30, "Size": "large", "Maneuverability": "Average", "HP": 150, "HP increment": 20, "DT": "-", "CT": "30", "Forward": {"heavy": 2}, "Port": {"light": 1}, "Starboard": {"light": 1}, "Aft": {"light": 1}, "turret": {"light": 1}, "Expansion Bays": 4, "Minimum Crew": "6", "Max Crew": "20"},
-	"Heavy Freighter": {"Cost": 40, "Size": "large", "Maneuverability": "Average", "HP": 120, "HP increment": 20, "DT": "-", "CT": "24", "Forward": {"light": 1, "heavy": 1}, "Port": {"heavy": 1}, "Starboard": {"heavy": 1}, "Aft": 0, "turret": 0, "Expansion Bays": 8, "Minimum Crew": "6", "Max Crew": "20"},
-	"Bulk Freighter": {"Cost": 55, "Size": "huge", "Maneuverability": "Poor", "HP": 160, "HP increment": 20, "DT": "5", "CT": "32", "Forward": {"heavy": 1}, "Port": 0, "Starboard": 0, "Aft": {"heavy": 1}, "turret": {"light": 2}, "Expansion Bays": 10, "Minimum Crew": "20", "Max Crew": "50"},
-	"Cruiser": {"Cost": 60, "Size": "huge", "Maneuverability": "Average", "HP": 180, "HP increment": 25, "DT": "5", "CT": "36", "Forward": {"capital": 1}, "Port": {"light": 1}, "Starboard": {"light": 1}, "Aft": 0, "turret": {"heavy": 1}, "Expansion Bays": 6, "Minimum Crew": "20", "Max Crew": "100"},
-	"Carrier": {"Cost": 120, "Size": "gargantuan", "Maneuverability": "Poor", "HP": 240, "HP increment": 30, "DT": "10", "CT": "48", "Forward": {"capital": 1}, "Port": {"heavy": 3}, "Starboard": {"heavy": 3}, "Aft": 0, "turret": {"light": 2}, "Expansion Bays": 10, "Minimum Crew": "75", "Max Crew": "200"},
-	"Battleship": {"Cost": 150, "Size": "gargantuan", "Maneuverability": "Average", "HP": 280, "HP increment": 40, "DT": "10", "CT": "56", "Forward": {"capital": 1, "heavy": 2}, "Port": {"light": 1, "heavy": 2}, "Starboard": {"light": 1, "heavy": 2}, "Aft": {"light": 1}, "turret": {"heavy": 2}, "Expansion Bays": 8, "Minimum Crew": "100", "Max Crew": "300"},
-	"Dreadnought": {"Cost": 200, "Size": "gargantuan", "Maneuverability": "Clumsy", "HP": 400, "HP increment": 50, "DT": "15", "CT": "80", "Forward": {"capital": 2, "heavy": 2}, "Port": {"heavy": 3, "capital": 1}, "Starboard": {"heavy": 3, "capital": 1}, "Aft": 0, "turret": {"light": 4}, "Expansion Bays": 20, "Minimum Crew": "125", "Max Crew": "500"}
+	"Racer": {"Cost": 4, "Size": "tiny", "Maneuverability": "Prefect", "HP": 20, "HP increment": 5, "DT": "-", "CT": "4", "Weapons": {"Forward": {"light": 1, "heavy": 0, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "1"},
+	"Interceptor": {"Cost": 6, "Size": "tiny", "Maneuverability": "Prefect", "HP": 30, "HP increment": 5, "DT": "-", "CT": "6", "Weapons": {"Forward": {"light": 2, "heavy": 0, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "1"},
+	"Fighter": {"Cost": 8, "Size": "tiny", "Maneuverability": "Good", "HP": 35, "HP increment": 5, "DT": "-", "CT": "7", "Weapons": {"Forward": {"light": 2, "heavy": 0, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 0, "Minimum Crew": "1", "Max Crew": "2"},
+	"Shuttle": {"Cost": 6, "Size": "small", "Maneuverability": "Perfect", "HP": 35, "HP increment": 5, "DT": "-", "CT": "7", "Weapons": {"Forward": {"light": 1, "heavy": 0, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 3, "Minimum Crew": "1", "Max Crew": "4"},
+	"Light Freighter": {"Cost": 10, "Size": "small", "Maneuverability": "Good", "HP": 40, "HP increment": 10, "DT": "-", "CT": "8", "Weapons": {"Forward": {"light": 2, "heavy": 0, "capital": 0}, "Port": {"light": 1, "heavy": 0, "capital": 0}, "Starboard": {"light": 1, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 3, "Minimum Crew": "1", "Max Crew": "6"},
+	"Explorer": {"Cost": 12, "Size": "medium", "Maneuverability": "Good", "HP": 55, "HP increment": 10, "DT": "-", "CT": "11", "Weapons": {"Forward": {"light": 1, "heavy": 0, "capital": 0}, "Port": {"light": 1, "heavy": 0, "capital": 0}, "Starboard": {"light": 1, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 1, "heavy": 0, "capital": 0}}, "Expansion Bays": 4, "Minimum Crew": "1", "Max Crew": "6"},
+	"Transport": {"Cost": 15, "Size": "medium", "Maneuverability": "Average", "HP": 70, "HP increment": 15, "DT": "-", "CT": "14", "Weapons": {"Forward": {"light": 1, "heavy": 1, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 2, "heavy": 0, "capital": 0}}, "Expansion Bays": 5, "Minimum Crew": "1", "Max Crew": "6"},
+	"Destroyer": {"Cost": 30, "Size": "large", "Maneuverability": "Average", "HP": 150, "HP increment": 20, "DT": "-", "CT": "30", "Weapons": {"Forward": {"light": 0, "heavy": 2, "capital": 0}, "Port": {"light": 1, "heavy": 0, "capital": 0}, "Starboard": {"light": 1, "heavy": 0, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 1, "heavy": 0, "capital": 0}}, "Expansion Bays": 4, "Minimum Crew": "6", "Max Crew": "20"},
+	"Heavy Freighter": {"Cost": 40, "Size": "large", "Maneuverability": "Average", "HP": 120, "HP increment": 20, "DT": "-", "CT": "24", "Weapons": {"Forward": {"light": 2, "heavy": 1, "capital": 0}, "Port": {"light": 0, "heavy": 1, "capital": 0}, "Starboard": {"light": 0, "heavy": 1, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 0, "capital": 0}}, "Expansion Bays": 8, "Minimum Crew": "6", "Max Crew": "20"},
+	"Bulk Freighter": {"Cost": 55, "Size": "huge", "Maneuverability": "Poor", "HP": 160, "HP increment": 20, "DT": "5", "CT": "32", "Weapons": {"Forward": {"light": 0, "heavy": 1, "capital": 0}, "Port": {"light": 0, "heavy": 0, "capital": 0}, "Starboard": {"light": 0, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 1, "capital": 0}, "turret": {"light": 2, "heavy": 0, "capital": 0}}, "Expansion Bays": 10, "Minimum Crew": "20", "Max Crew": "50"},
+	"Cruiser": {"Cost": 60, "Size": "huge", "Maneuverability": "Average", "HP": 180, "HP increment": 25, "DT": "5", "CT": "36", "Weapons": {"Forward": {"light": 0, "heavy": 0, "capital": 1}, "Port": {"light": 1, "heavy": 0, "capital": 0}, "Starboard": {"light": 1, "heavy": 0, "capital": 0}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 1, "capital": 0}}, "Expansion Bays": 6, "Minimum Crew": "20", "Max Crew": "100"},
+	"Carrier": {"Cost": 120, "Size": "gargantuan", "Maneuverability": "Poor", "HP": 240, "HP increment": 30, "DT": "10", "CT": "48", "Weapons": {"Forward": {"light": 0, "heavy": 0, "capital": 1}, "Port": {"light": 0, "heavy": 3, "capital": 0}, "Starboard": {"light": 0, "heavy": 3, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 2, "heavy": 0, "capital": 0}}, "Expansion Bays": 10, "Minimum Crew": "75", "Max Crew": "200"},
+	"Battleship": {"Cost": 150, "Size": "gargantuan", "Maneuverability": "Average", "HP": 280, "HP increment": 40, "DT": "10", "CT": "56", "Weapons": {"Forward": {"light": 0, "heavy": 2, "capital": 1}, "Port": {"light": 1, "heavy": 2, "capital": 0}, "Starboard": {"light": 1, "heavy": 2, "capital": 0}, "Aft": {"light": 1, "heavy": 0, "capital": 0}, "turret": {"light": 0, "heavy": 2, "capital": 0}}, "Expansion Bays": 8, "Minimum Crew": "100", "Max Crew": "300"},
+	"Dreadnought": {"Cost": 200, "Size": "gargantuan", "Maneuverability": "Clumsy", "HP": 400, "HP increment": 50, "DT": "15", "CT": "80", "Weapons": {"Forward": {"light": 0, "heavy": 2, "capital": 2}, "Port": {"light": 0, "heavy": 3, "capital": 1}, "Starboard": {"light": 0, "heavy": 3, "capital": 1}, "Aft": {"light": 0, "heavy": 0, "capital": 0}, "turret": {"light": 4, "heavy": 0, "capital": 0}}, "Expansion Bays": 20, "Minimum Crew": "125", "Max Crew": "500"}
 }
 
 shippower = {
@@ -335,11 +335,20 @@ tracking_ship_weapons = {
 
 if __name__ == "__main__":
 	ship = OrderedDict()
+	forward = []
+	port = []
+	starboard = []
+	aft = []
+	turret = []
 	ship = {
 		"frame": "value", #required
 		"powercore": "value", #required
 		"thrusters": "value", #required
-		"weapons": {"weapon": "value"}, #required
+		"forwardweapons": forward,
+		"portweapons":  "Value",
+		"starboardweapons":  "Value", #required
+		"aftweapons":  "Value",
+		"turretweapons":  "Value",
 		"Computer": "Value", #required
 		"drift engine": "value", #required
 		"shields": "value", #required
@@ -359,6 +368,7 @@ if __name__ == "__main__":
 	shipframeBP = int(BP * .2)
 	shippowerBP = int(BP * .2)
 	shipthrusterBP = int(BP * .15)
+	shipweaponsBP = int(BP * .2)
 	frameslist = {}
 	for framename, frame in shipframes.iteritems():
 		if frame["Cost"] <= shipframeBP:
@@ -378,7 +388,39 @@ if __name__ == "__main__":
 		if thruster["Cost"] <= shipthrusterBP:
 			thrusterlist[thrusters] = thruster
 	ship["thrusters"] = random.choice(thrusterlist.keys())
-	print shippowercore
+	activethrusters = ship["thrusters"]
+	shipweapons = shipframestats["Weapons"]
+	shipforwardweapons = shipweapons["Forward"]
+	shipforwardlightweapons = shipforwardweapons["light"]
+	shipforwardheavyweapons = shipforwardweapons["heavy"]
+	shipforwardcapitalweapons = shipforwardweapons["capital"]
+	shipportweapons = shipweapons["Port"]
+	shipportlightweapons = shipportweapons["light"]
+	shipportheavyweapons = shipportweapons["heavy"]
+	shipportcapitalweapons = shipportweapons["capital"]
+	shipstarboardweapons = shipweapons["Starboard"]
+	shipstarboardlightweapons = shipstarboardweapons["light"]
+	shipstarboardheavyweapons = shipstarboardweapons["heavy"]
+	shipstarboardcapitalweapons = shipstarboardweapons["capital"]
+	shipaftweapons = shipweapons["Aft"]
+	shipaftlightweapons = shipaftweapons["light"]
+	shipaftheavyweapons = shipaftweapons["heavy"]
+	shipaftcapitalweapons = shipaftweapons["capital"]
+	shipturretweapons = shipweapons["turret"]
+	shipturretlightweapons = shipturretweapons["light"]
+	shipturretheavyweapons = shipturretweapons["heavy"]
+	shipturretcapitalweapons = shipturretweapons["capital"]
+	directweaponlist = {}
+	for directweapons, weapon in direct_ship_weapons.iteritems():
+		if weapon["Cost"] <= shipweaponsBP and weapon["type"] == "Light":
+			directweaponlist[directweapons] = weapon
+	
+	while shipforwardlightweapons > 0:
+		forward = forward.append(random.choice(directweaponlist.keys()))
+		shipforwardlightweapons = shipforwardlightweapons - 1
+
+
+	print ship
 
 	
 	
